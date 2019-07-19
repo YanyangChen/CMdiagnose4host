@@ -1,0 +1,10 @@
+<h1>{{ person.pk }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'CMdiagnose:tell' person.id %}" method="post">
+{% csrf_token %}
+<label>General Symptoms</label>
+<input type="text" name="general" value=""><br>
+<input type="submit" value="get result">
+</form>

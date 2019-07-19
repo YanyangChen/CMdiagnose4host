@@ -1,0 +1,17 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<p>本資料庫的內容來源繁雜，不及備載，僅供學術參考，不作商業用途，其著作權各歸其原作者或其出版社所有。若有真實疾患請尋求合法醫師，非中醫師請勿擅自處方服藥。</p>
+<br>
+<a href="{% url 'CMdiagnose:newdetailxue' %}">穴位搜索</a>
+<br>
+<a href="{% url 'CMdiagnose:newdetailyao' %}">中藥搜索</a>
+<br>
+<a href="{% url 'CMdiagnose:newdetail' %}">方劑搜索</a>
+    <!-- <ul>
+    {% for person in Person_list %}
+        <li><a href="{% url 'CMdiagnose:detail' person.pk %}">{{ person.pk }}</a></li>
+    {% endfor %}
+    </ul> -->
+

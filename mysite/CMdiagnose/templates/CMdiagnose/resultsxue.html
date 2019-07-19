@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/style3.css' %}">
+
+<body>
+<h1>穴位主治：</h1>
+
+<p>{{ person.body.general |linebreaks}}</p>
+
+<h1>相關穴位：</h1>
+<div style="user-select:none">
+<p>{% autoescape off %}{{ person.body.result |linebreaks}}{% endautoescape %}</p>
+</div>
+</body>

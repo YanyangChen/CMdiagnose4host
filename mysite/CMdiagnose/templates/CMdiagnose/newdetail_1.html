@@ -1,0 +1,2020 @@
+
+    {% load static %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/multi-select/css/multi-select.css' %}">
+
+
+<h1>New</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'CMdiagnose:new' %}" method="post">
+{% csrf_token %}
+<label>General Symptoms</label>
+<input type="text" id="generalt" name="generalt" value=""><br>
+<select multiple='multiple' class='searchable' name="general">
+  <option value=噯氣泛酸>噯氣泛酸</option>
+  <option value=按胸則痛>按胸則痛</option>
+  <option value=噯氣吞酸>噯氣吞酸</option>
+  <option value=噯腐吞酸>噯腐吞酸</option>
+  <option value=便血>便血</option>
+  <option value=鼻中壅塞>鼻中壅塞</option>
+  <option value=白濁>白濁</option>
+  <option value=不得臥>不得臥</option>
+  <option value=變而內陷>變而內陷</option>
+  <option value=不得眠>不得眠</option>
+  <option value=便膿血>便膿血</option>
+  <option value=半產>半產</option>
+  <option value=遍身腫滿>遍身腫滿</option>
+  <option value=痹證日久>痹證日久</option>
+  <option value=奔豚>奔豚</option>
+  <option value=暴痛>暴痛</option>
+  <option value=遍身骨節煩痛>遍身骨節煩痛</option>
+  <option value=不煩渴>不煩渴</option>
+  <option value=鼻塞>鼻塞</option>
+  <option value=步履艱難>步履艱難</option>
+  <option value=鼻息不通>鼻息不通</option>
+  <option value=便秘尿赤>便秘尿赤</option>
+  <option value=鼻燥>鼻燥</option>
+  <option value=鼻流濁涕不止>鼻流濁涕不止</option>
+  <option value=不交津液自出；消渴病后發癰疽>不交津液自出；消渴病后發癰疽</option>
+  <option value=鼻鳴>鼻鳴</option>
+  <option value=表虛汗出>表虛汗出</option>
+  <option value=胞衣不下>胞衣不下</option>
+  <option value=半身麻痹>半身麻痹</option>
+  <option value=表證未解>表證未解</option>
+  <option value=不煩而躁>不煩而躁</option>
+  <option value=便秘>便秘</option>
+  <option value=不省人事>不省人事</option>
+  <option value=不汗出而煩躁>不汗出而煩躁</option>
+  <option value=表裡俱實證>表裡俱實證</option>
+  <option value=不眠>不眠</option>
+  <option value=鼻鳴乾嘔>鼻鳴乾嘔</option>
+  <option value=便乾>便乾</option>
+  <option value=鼻塞聲重>鼻塞聲重</option>
+  <option value=便秘傾向>便秘傾向</option>
+  <option value=鼻乾口渴>鼻乾口渴</option>
+  <option value=半身不遂>半身不遂</option>
+  <option value=鼻衂吐血不盡>鼻衂吐血不盡</option>
+  <option value=便閉>便閉</option>
+  <option value=補氣健脾>補氣健脾</option>
+  <option value=不思飲食>不思飲食</option>
+  <option value=鼻竇炎>鼻竇炎</option>
+  <option value=不眠驚悸>不眠驚悸</option>
+  <option value=鼻乾>鼻乾</option>
+  <option value=不聞香臭>不聞香臭</option>
+  <option value=病後吐涎沫>病後吐涎沫</option>
+  <option value=不欲飲食>不欲飲食</option>
+  <option value=不欲食>不欲食</option>
+  <option value=鼻塞>鼻塞</option>
+  <option value=不渴飲>不渴飲</option>
+  <option value=表裡俱熱>表裡俱熱</option>
+  <option value=遍身頑麻>遍身頑麻</option>
+  <option value=白痢>白痢</option>
+  <option value=不能食>不能食</option>
+  <option value=不得安臥>不得安臥</option>
+  <option value=鼻衄>鼻衄</option>
+  <option value=便秘頰紅>便秘頰紅</option>
+  <option value=敗血症>敗血症</option>
+  <option value=唇白>唇白</option>
+  <option value=寸口脈弦滑浮大者>寸口脈弦滑浮大者</option>
+  <option value=喘呼氣急>喘呼氣急</option>
+  <option value=唇舌腮頰腫痛>唇舌腮頰腫痛</option>
+  <option value=赤濁>赤濁</option>
+  <option value=齒痛>齒痛</option>
+  <option value=產後尿頻>產後尿頻</option>
+  <option value=腸風>腸風</option>
+  <option value=唇紅頰赤>唇紅頰赤</option>
+  <option value=喘嗽>喘嗽</option>
+  <option value=寸脈微浮>寸脈微浮</option>
+  <option value=腸血>腸血</option>
+  <option value=喘>喘</option>
+  <option value=腸癰>腸癰</option>
+  <option value=瘡瘍腫毒>瘡瘍腫毒</option>
+  <option value=喘嗽氣急>喘嗽氣急</option>
+  <option value=产后血虚有寒>产后血虚有寒</option>
+  <option value=潮熱>潮熱</option>
+  <option value=瘡瘍發疹>瘡瘍發疹</option>
+  <option value=腸風痔漏>腸風痔漏</option>
+  <option value=唇舌紅口臭>唇舌紅口臭</option>
+  <option value=瘡瘍寒>瘡瘍寒</option>
+  <option value=腸鳴切痛>腸鳴切痛</option>
+  <option value=錯語不眠>錯語不眠</option>
+  <option value=喘咳氣急>喘咳氣急</option>
+  <option value=瘡瘍>瘡瘍</option>
+  <option value=瘡瘍腫毒初起>瘡瘍腫毒初起</option>
+  <option value=赤白痢>赤白痢</option>
+  <option value=唇口皺潤燥裂>唇口皺潤燥裂</option>
+  <option value=唇焦>唇焦</option>
+  <option value=喘而汗出>喘而汗出</option>
+  <option value=蟲嚙>蟲嚙</option>
+  <option value=唇赤>唇赤</option>
+  <option value=瘡盛形羸>瘡盛形羸</option>
+  <option value=蟲積>蟲積</option>
+  <option value=嘈雜>嘈雜</option>
+  <option value=赤痢>赤痢</option>
+  <option value=唇口紫暗>唇口紫暗</option>
+  <option value=產後惡露不盡>產後惡露不盡</option>
+  <option value=腸風下血>腸風下血</option>
+  <option value=瘡>瘡</option>
+  <option value=嘈雜嘔吐>嘈雜嘔吐</option>
+  <option value=唇舌白>唇舌白</option>
+  <option value=喘咳嗽>喘咳嗽</option>
+  <option value=腸中諸蟲腹疼>腸中諸蟲腹疼</option>
+  <option value=大便不通或下利清水>大便不通或下利清水</option>
+  <option value=大便硬>大便硬</option>
+  <option value=大便結>大便結</option>
+  <option value=盜汗>盜汗</option>
+  <option value=但滿不痛>但滿不痛</option>
+  <option value=大便秘>大便秘</option>
+  <option value=膽囊炎>膽囊炎</option>
+  <option value=大便秘澀>大便秘澀</option>
+  <option value=大便微溏>大便微溏</option>
+  <option value=德國麻疹>德國麻疹</option>
+  <option value=多尿>多尿</option>
+  <option value=低血糖休克>低血糖休克</option>
+  <option value=盜汗>盜汗</option>
+  <option value=洞洩>洞洩</option>
+  <option value=痘>痘</option>
+  <option value=大便乾結>大便乾結</option>
+  <option value=大便溏>大便溏</option>
+  <option value=跌打損傷>跌打損傷</option>
+  <option value=大便不暢>大便不暢</option>
+  <option value=大便滑瀉>大便滑瀉</option>
+  <option value=戴陽證>戴陽證</option>
+  <option value=大便或溏或不暢>大便或溏或不暢</option>
+  <option value=大便泄瀉>大便泄瀉</option>
+  <option value=稻田性皮炎>稻田性皮炎</option>
+  <option value=大熱乾嘔>大熱乾嘔</option>
+  <option value=疔>疔</option>
+  <option value=大汗出>大汗出</option>
+  <option value=大便燥結>大便燥結</option>
+  <option value=大便不調>大便不調</option>
+  <option value=大便燥結痛不可忍>大便燥結痛不可忍</option>
+  <option value=大便溏>大便溏</option>
+  <option value=多怒易驚>多怒易驚</option>
+  <option value=癲狂>癲狂</option>
+  <option value=大便或秘或利>大便或秘或利</option>
+  <option value=戴陽>戴陽</option>
+  <option value=大汗後亡陽>大汗後亡陽</option>
+  <option value=大便黑>大便黑</option>
+  <option value=大頭瘟>大頭瘟</option>
+  <option value=大便秘結>大便秘結</option>
+  <option value=惡寒重發熱輕>惡寒重發熱輕</option>
+  <option value=噁心>噁心</option>
+  <option value=呃逆>呃逆</option>
+  <option value=惡寒發熱>惡寒發熱</option>
+  <option value=呃逆或嘔吐>呃逆或嘔吐</option>
+  <option value=惡食懶倦>惡食懶倦</option>
+  <option value=耳聾>耳聾</option>
+  <option value=惡風寒>惡風寒</option>
+  <option value=二便不利>二便不利</option>
+  <option value=惡寒無汗>惡寒無汗</option>
+  <option value=而雜症罕見>而雜症罕見</option>
+  <option value=惡寒>惡寒</option>
+  <option value=耳聾耳嗚>耳聾耳嗚</option>
+  <option value=惡寒發熱>惡寒發熱</option>
+  <option value=耳聾耳腫>耳聾耳腫</option>
+  <option value=惡風>惡風</option>
+  <option value=耳鳴>耳鳴</option>
+  <option value=惡寒蜷臥>惡寒蜷臥</option>
+  <option value=噁心嘔吐>噁心嘔吐</option>
+  <option value=煩躁不眠>煩躁不眠</option>
+  <option value=煩懊不安>煩懊不安</option>
+  <option value=風熱壅盛>風熱壅盛</option>
+  <option value=腹痛>腹痛</option>
+  <option value=風邪熱毒客于少陰>風邪熱毒客于少陰</option>
+  <option value=腹中拘急>腹中拘急</option>
+  <option value=發狂>發狂</option>
+  <option value=腹中冷痛>腹中冷痛</option>
+  <option value=腹股溝斜疝>腹股溝斜疝</option>
+  <option value=腹痛吐瀉>腹痛吐瀉</option>
+  <option value=肺虛之症>肺虛之症</option>
+  <option value=腹滿便秘>腹滿便秘</option>
+  <option value=婦人妊娠>婦人妊娠</option>
+  <option value=風閉>風閉</option>
+  <option value=發寒熱>發寒熱</option>
+  <option value=肺金受溼熱之邪>肺金受溼熱之邪</option>
+  <option value=發熱惡寒>發熱惡寒</option>
+  <option value=风虚昏愦不自觉知>风虚昏愦不自觉知</option>
+  <option value=肺癰腸癰>肺癰腸癰</option>
+  <option value=腹滿痛>腹滿痛</option>
+  <option value=煩熱>煩熱</option>
+  <option value=服汗劑汗不出>服汗劑汗不出</option>
+  <option value=風寒濕邪表證兼有裡證>風寒濕邪表證兼有裡證</option>
+  <option value=風邪上攻所致之鼻淵>風邪上攻所致之鼻淵</option>
+  <option value=婦人久虛羸瘦>婦人久虛羸瘦</option>
+  <option value=婦女心腹疼痛>婦女心腹疼痛</option>
+  <option value=煩渴易飢>煩渴易飢</option>
+  <option value=腹大脹滿堅硬>腹大脹滿堅硬</option>
+  <option value=發熱>發熱</option>
+  <option value=肺熱之症>肺熱之症</option>
+  <option value=翻胃便秘>翻胃便秘</option>
+  <option value=發腫>發腫</option>
+  <option value=腹滿痛硬>腹滿痛硬</option>
+  <option value=腹中結塊>腹中結塊</option>
+  <option value=風邪中表>風邪中表</option>
+  <option value=肺炎>肺炎</option>
+  <option value=風半身不遂>風半身不遂</option>
+  <option value=腹軟喜溫按>腹軟喜溫按</option>
+  <option value=肺寒之症>肺寒之症</option>
+  <option value=腹瀉>腹瀉</option>
+  <option value=發熱惡寒無汗>發熱惡寒無汗</option>
+  <option value=伏燥>伏燥</option>
+  <option value=伏火>伏火</option>
+  <option value=肺痿>肺痿</option>
+  <option value=肺癰>肺癰</option>
+  <option value=煩悶不食者>煩悶不食者</option>
+  <option value=腹痛引睪丸>腹痛引睪丸</option>
+  <option value=腹痛>腹痛</option>
+  <option value=肺實之症>肺實之症</option>
+  <option value=肺邪在表>肺邪在表</option>
+  <option value=發癲狂>發癲狂</option>
+  <option value=發熱頭痛>發熱頭痛</option>
+  <option value=肺陰虛>肺陰虛</option>
+  <option value=風寒>風寒</option>
+  <option value=煩躁發狂>煩躁發狂</option>
+  <option value=婦女帶下>婦女帶下</option>
+  <option value=風虛>風虛</option>
+  <option value=腹痛腰冷不渴>腹痛腰冷不渴</option>
+  <option value=發熱惡寒>發熱惡寒</option>
+  <option value=發熱面赤>發熱面赤</option>
+  <option value=婦人血風>婦人血風</option>
+  <option value=腹脹>腹脹</option>
+  <option value=肺結核>肺結核</option>
+  <option value=腹中拘急>腹中拘急</option>
+  <option value=婦女月經不調或瘀積不通>婦女月經不調或瘀積不通</option>
+  <option value=風疹>風疹</option>
+  <option value=腹痛嘔吐>腹痛嘔吐</option>
+  <option value=煩躁口渴>煩躁口渴</option>
+  <option value=發頤>發頤</option>
+  <option value=發熱煩躁>發熱煩躁</option>
+  <option value=腹冷痛>腹冷痛</option>
+  <option value=肺虚寒>肺虚寒</option>
+  <option value=肺熱喘咳證>肺熱喘咳證</option>
+  <option value=煩渴喜飲>煩渴喜飲</option>
+  <option value=風熱便秘>風熱便秘</option>
+  <option value=痱子>痱子</option>
+  <option value=煩渴>煩渴</option>
+  <option value=煩熱易飢>煩熱易飢</option>
+  <option value=煩躁>煩躁</option>
+  <option value=風寒束表>風寒束表</option>
+  <option value=肝經實火證>肝經實火證</option>
+  <option value=骨蒸勞熱>骨蒸勞熱</option>
+  <option value=肝腎兩虧>肝腎兩虧</option>
+  <option value=感冒>感冒</option>
+  <option value=肝熱>肝熱</option>
+  <option value=膈上有火>膈上有火</option>
+  <option value=骨髓中熱>骨髓中熱</option>
+  <option value=關節腫痛>關節腫痛</option>
+  <option value=肝經濕熱下注證>肝經濕熱下注證</option>
+  <option value=肝旺脾虛>肝旺脾虛</option>
+  <option value=骨節疼痛>骨節疼痛</option>
+  <option value=膈滿不食>膈滿不食</option>
+  <option value=肝實>肝實</option>
+  <option value=關節麻木不仁>關節麻木不仁</option>
+  <option value=鼓脹>鼓脹</option>
+  <option value=過午便熱>過午便熱</option>
+  <option value=骨節卒痛難以名狀>骨節卒痛難以名狀</option>
+  <option value=攻衝作痛>攻衝作痛</option>
+  <option value=肝硬化腹水>肝硬化腹水</option>
+  <option value=肝炎>肝炎</option>
+  <option value=過敏性鼻炎>過敏性鼻炎</option>
+  <option value=關格>關格</option>
+  <option value=肝火犯胃證>肝火犯胃證</option>
+  <option value=肝膽實火上炎證>肝膽實火上炎證</option>
+  <option value=骨蒸>骨蒸</option>
+  <option value=肝火犯胃>肝火犯胃</option>
+  <option value=龜胸>龜胸</option>
+  <option value=肝經鬱火上攻>肝經鬱火上攻</option>
+  <option value=膏淋>膏淋</option>
+  <option value=肝虛>肝虛</option>
+  <option value=肛門疾患術後>肛門疾患術後</option>
+  <option value=肛門灼熱感>肛門灼熱感</option>
+  <option value=肛門有灼熱感>肛門有灼熱感</option>
+  <option value=過敏性紫癜>過敏性紫癜</option>
+  <option value=過敏性皮炎>過敏性皮炎</option>
+  <option value=蠱脹>蠱脹</option>
+  <option value=骨蒸>骨蒸</option>
+  <option value=肝寒>肝寒</option>
+  <option value=關節屈伸不利>關節屈伸不利</option>
+  <option value=各種嘔吐>各種嘔吐</option>
+  <option value=寒成勞>寒成勞</option>
+  <option value=寒熱往來>寒熱往來</option>
+  <option value=或浮而空>或浮而空</option>
+  <option value=或如米泔>或如米泔</option>
+  <option value=或痛經>或痛經</option>
+  <option value=或大便泄瀉>或大便泄瀉</option>
+  <option value=喉有痰聲>喉有痰聲</option>
+  <option value=呼多吸少>呼多吸少</option>
+  <option value=寒熱頭痛>寒熱頭痛</option>
+  <option value=黃胖面腫>黃胖面腫</option>
+  <option value=或嘔吐或腸鳴下痢>或嘔吐或腸鳴下痢</option>
+  <option value=或盜汗>或盜汗</option>
+  <option value=忽昏暈不知人>忽昏暈不知人</option>
+  <option value=喉疼>喉疼</option>
+  <option value=或喀痰不爽>或喀痰不爽</option>
+  <option value=霍亂>霍亂</option>
+  <option value=寒熱往來>寒熱往來</option>
+  <option value=火閉>火閉</option>
+  <option value=寒凝氣滯>寒凝氣滯</option>
+  <option value=回陽救急>回陽救急</option>
+  <option value=咳唾>咳唾</option>
+  <option value=或口渴>或口渴</option>
+  <option value=寒濕疝氣>寒濕疝氣</option>
+  <option value=黃膽>黃膽</option>
+  <option value=黃疸>黃疸</option>
+  <option value=咳痰清稀>咳痰清稀</option>
+  <option value=或胸脅作痛>或胸脅作痛</option>
+  <option value=或外科癰腫疔毒>或外科癰腫疔毒</option>
+  <option value=或发寒热>或发寒热</option>
+  <option value=寒熱錯雜>寒熱錯雜</option>
+  <option value=火熱灼肺>火熱灼肺</option>
+  <option value=或下利>或下利</option>
+  <option value=寒疝>寒疝</option>
+  <option value=寒郁热邪>寒郁热邪</option>
+  <option value=或腹脹>或腹脹</option>
+  <option value=黃病>黃病</option>
+  <option value=或久瀉不止>或久瀉不止</option>
+  <option value=寒邪內侵>寒邪內侵</option>
+  <option value=黃疸初起>黃疸初起</option>
+  <option value=或不寐>或不寐</option>
+  <option value=頸腫>頸腫</option>
+  <option value=及老幼霍亂吐瀉>及老幼霍亂吐瀉</option>
+  <option value=記憶力減退>記憶力減退</option>
+  <option value=久則吐膿>久則吐膿</option>
+  <option value=腳膝軟弱>腳膝軟弱</option>
+  <option value=久痢久瘧>久痢久瘧</option>
+  <option value=倦怠>倦怠</option>
+  <option value=見突然昏倒>見突然昏倒</option>
+  <option value=急性胃腸炎>急性胃腸炎</option>
+  <option value=拘束肢冷>拘束肢冷</option>
+  <option value=驚悸怔忡>驚悸怔忡</option>
+  <option value=厥脫>厥脫</option>
+  <option value=倦怠喜睡>倦怠喜睡</option>
+  <option value=積聚>積聚</option>
+  <option value=筋痿拘攣>筋痿拘攣</option>
+  <option value=久瀉久痢>久瀉久痢</option>
+  <option value=積滯不消>積滯不消</option>
+  <option value=經閉成勞>經閉成勞</option>
+  <option value=久病體弱>久病體弱</option>
+  <option value=結胸>結胸</option>
+  <option value=酒疸>酒疸</option>
+  <option value=驚悸搐搦>驚悸搐搦</option>
+  <option value=精神不振>精神不振</option>
+  <option value=肌熱表熱>肌熱表熱</option>
+  <option value=津液枯少>津液枯少</option>
+  <option value=漸至不通羸瘦而生潮熱>漸至不通羸瘦而生潮熱</option>
+  <option value=見身熱汗多>見身熱汗多</option>
+  <option value=癤>癤</option>
+  <option value=見氣逆喘息>見氣逆喘息</option>
+  <option value=肩背沈重>肩背沈重</option>
+  <option value=酒查皮鼻>酒查皮鼻</option>
+  <option value=久咳>久咳</option>
+  <option value=酒食生痰>酒食生痰</option>
+  <option value=精滑不禁>精滑不禁</option>
+  <option value=倦怠喜臥>倦怠喜臥</option>
+  <option value=肌瘦>肌瘦</option>
+  <option value=健忘>健忘</option>
+  <option value=驚悸鬱結>驚悸鬱結</option>
+  <option value=筋脈拘攣>筋脈拘攣</option>
+  <option value=酒積不化>酒積不化</option>
+  <option value=厥逆>厥逆</option>
+  <option value=痎瘧>痎瘧</option>
+  <option value=及崩中漏下>及崩中漏下</option>
+  <option value=雞鳴泄瀉>雞鳴泄瀉</option>
+  <option value=局部紅腫熱痛>局部紅腫熱痛</option>
+  <option value=驚悸>驚悸</option>
+  <option value=及小兒急驚>及小兒急驚</option>
+  <option value=及中风自汗>及中风自汗</option>
+  <option value=腳氣>腳氣</option>
+  <option value=積乳食>積乳食</option>
+  <option value=久痢>久痢</option>
+  <option value=經水過多>經水過多</option>
+  <option value=交腸>交腸</option>
+  <option value=姜附湯加肉桂主之>姜附湯加肉桂主之</option>
+  <option value=經期時前時後>經期時前時後</option>
+  <option value=酒積>酒積</option>
+  <option value=見小便頻數>見小便頻數</option>
+  <option value=角弓反張>角弓反張</option>
+  <option value=筋燥爪乾>筋燥爪乾</option>
+  <option value=咳嗽氣喘>咳嗽氣喘</option>
+  <option value=口眼蠕動>口眼蠕動</option>
+  <option value=口渴便秘>口渴便秘</option>
+  <option value=口苦苔黃薄>口苦苔黃薄</option>
+  <option value=口乾燥>口乾燥</option>
+  <option value=口眼喎斜>口眼喎斜</option>
+  <option value=口燥>口燥</option>
+  <option value=狂躁心煩>狂躁心煩</option>
+  <option value=口乾煩滿而渴>口乾煩滿而渴</option>
+  <option value=口乾唇燥喉乾嗆咳>口乾唇燥喉乾嗆咳</option>
+  <option value=口內炎>口內炎</option>
+  <option value=口淡不渴>口淡不渴</option>
+  <option value=口吐黃涎>口吐黃涎</option>
+  <option value=口乾唇燥>口乾唇燥</option>
+  <option value=口苦>口苦</option>
+  <option value=口氣臭穢>口氣臭穢</option>
+  <option value=渴欲飲冷>渴欲飲冷</option>
+  <option value=咯血>咯血</option>
+  <option value=咳嗽>咳嗽</option>
+  <option value=咳嗽氣喘>咳嗽氣喘</option>
+  <option value=口苦而乾>口苦而乾</option>
+  <option value=口渴>口渴</option>
+  <option value=咳嗽咽乾>咳嗽咽乾</option>
+  <option value=口苦而嘔>口苦而嘔</option>
+  <option value=口苦吞酸>口苦吞酸</option>
+  <option value=渴證>渴證</option>
+  <option value=口乾而渴>口乾而渴</option>
+  <option value=口舌生瘡>口舌生瘡</option>
+  <option value=咳嗽濃痰>咳嗽濃痰</option>
+  <option value=咳喘痰稠>咳喘痰稠</option>
+  <option value=口臭>口臭</option>
+  <option value=咳嗽胸悶>咳嗽胸悶</option>
+  <option value=咳嗽痰多>咳嗽痰多</option>
+  <option value=口燥唇乾>口燥唇乾</option>
+  <option value=口燥咽乾>口燥咽乾</option>
+  <option value=口乾咽燥>口乾咽燥</option>
+  <option value=咳嗽日久>咳嗽日久</option>
+  <option value=口苦>口苦</option>
+  <option value=口苦目赤>口苦目赤</option>
+  <option value=口苦嗌乾>口苦嗌乾</option>
+  <option value=口乾不欲飲>口乾不欲飲</option>
+  <option value=口舌生瘡或咽痛>口舌生瘡或咽痛</option>
+  <option value=口苦脈弦>口苦脈弦</option>
+  <option value=口瘡>口瘡</option>
+  <option value=口乾舌燥>口乾舌燥</option>
+  <option value=咳嗽痰黃>咳嗽痰黃</option>
+  <option value=咳血>咳血</option>
+  <option value=渴喜熱湯>渴喜熱湯</option>
+  <option value=咳嗽聲不出>咳嗽聲不出</option>
+  <option value=口淡無味>口淡無味</option>
+  <option value=口渴苔黃>口渴苔黃</option>
+  <option value=潰爛>潰爛</option>
+  <option value=口眼喎邪>口眼喎邪</option>
+  <option value=口渴>口渴</option>
+  <option value=口渴面赤>口渴面赤</option>
+  <option value=口瘡口臭>口瘡口臭</option>
+  <option value=裏實表虛>裏實表虛</option>
+  <option value=理氣消食>理氣消食</option>
+  <option value=闌尾炎>闌尾炎</option>
+  <option value=雷頭風>雷頭風</option>
+  <option value=兩脇刺痛>兩脇刺痛</option>
+  <option value=流涎>流涎</option>
+  <option value=勞淋>勞淋</option>
+  <option value=老年性便秘>老年性便秘</option>
+  <option value=瘰癧>瘰癧</option>
+  <option value=利清穀>利清穀</option>
+  <option value=老人冷氣>老人冷氣</option>
+  <option value=六脈洪數>六脈洪數</option>
+  <option value=老年性痴呆症>老年性痴呆症</option>
+  <option value=淋症>淋症</option>
+  <option value=流清涕>流清涕</option>
+  <option value=厉风所伤>厉风所伤</option>
+  <option value=兩頰常赤>兩頰常赤</option>
+  <option value=瘰癧堅而不潰或潰破流膿水者>瘰癧堅而不潰或潰破流膿水者</option>
+  <option value=癆熱>癆熱</option>
+  <option value=痢疾初期裏急後重>痢疾初期裏急後重</option>
+  <option value=老淋>老淋</option>
+  <option value=脈右寸必有力>脈右寸必有力</option>
+  <option value=木乘脾土>木乘脾土</option>
+  <option value=馬刀瘡>馬刀瘡</option>
+  <option value=脈弦>脈弦</option>
+  <option value=目胞腫痛>目胞腫痛</option>
+  <option value=脈右寸必數>脈右寸必數</option>
+  <option value=脈數有力>脈數有力</option>
+  <option value=脈浮數>脈浮數</option>
+  <option value=脈細或沈>脈細或沈</option>
+  <option value=脈緩或弱>脈緩或弱</option>
+  <option value=脈洪實>脈洪實</option>
+  <option value=脈左寸弱>脈左寸弱</option>
+  <option value=脈浮緊>脈浮緊</option>
+  <option value=目干>目干</option>
+  <option value=目赤腫痛>目赤腫痛</option>
+  <option value=綿綿不休>綿綿不休</option>
+  <option value=脈結代>脈結代</option>
+  <option value=脈弦緊>脈弦緊</option>
+  <option value=脈細>脈細</option>
+  <option value=脈沈弦>脈沈弦</option>
+  <option value=脈沉數有力>脈沉數有力</option>
+  <option value=脈弦數>脈弦數</option>
+  <option value=脈滑數>脈滑數</option>
+  <option value=脈浮>脈浮</option>
+  <option value=脈弦>脈弦</option>
+  <option value=脈浮弱或浮緩>脈浮弱或浮緩</option>
+  <option value=脈緩>脈緩</option>
+  <option value=脈左右尺必遲沉>脈左右尺必遲沉</option>
+  <option value=木舌>木舌</option>
+  <option value=脈虛弱>脈虛弱</option>
+  <option value=脈數>脈數</option>
+  <option value=脈右關必洪數>脈右關必洪數</option>
+  <option value=目赤口苦>目赤口苦</option>
+  <option value=脈弦有力>脈弦有力</option>
+  <option value=滿悶>滿悶</option>
+  <option value=夢寐奇怪之狀>夢寐奇怪之狀</option>
+  <option value=目不明>目不明</option>
+  <option value=目視無光>目視無光</option>
+  <option value=眉棱骨眼眶痛>眉棱骨眼眶痛</option>
+  <option value=脈沉>脈沉</option>
+  <option value=脈緊>脈緊</option>
+  <option value=捫之烙手>捫之烙手</option>
+  <option value=慢性結腸炎>慢性結腸炎</option>
+  <option value=目眩頭暈>目眩頭暈</option>
+  <option value=脈浮>脈浮</option>
+  <option value=面色無華>面色無華</option>
+  <option value=脈無力>脈無力</option>
+  <option value=脈滑數>脈滑數</option>
+  <option value=面赤身熱>面赤身熱</option>
+  <option value=面赤惡熱>面赤惡熱</option>
+  <option value=慢性膽囊炎>慢性膽囊炎</option>
+  <option value=脈浮無力>脈浮無力</option>
+  <option value=脈細數>脈細數</option>
+  <option value=脈緩弱>脈緩弱</option>
+  <option value=脈沉微>脈沉微</option>
+  <option value=麻疹>麻疹</option>
+  <option value=脈虛數>脈虛數</option>
+  <option value=慢性胃炎>慢性胃炎</option>
+  <option value=脈沈遲>脈沈遲</option>
+  <option value=脈沈實或澀>脈沈實或澀</option>
+  <option value=脈弦滑>脈弦滑</option>
+  <option value=脈弦細>脈弦細</option>
+  <option value=泌尿系感染>泌尿系感染</option>
+  <option value=脈浮而緊；風濕表症>脈浮而緊；風濕表症</option>
+  <option value=脈弦數>脈弦數</option>
+  <option value=面色蒼白>面色蒼白</option>
+  <option value=脈沈>脈沈</option>
+  <option value=目眩>目眩</option>
+  <option value=脈虛緩>脈虛緩</option>
+  <option value=脈滑>脈滑</option>
+  <option value=面色不佳>面色不佳</option>
+  <option value=梅尼爾症候群>梅尼爾症候群</option>
+  <option value=脈滑數有力>脈滑數有力</option>
+  <option value=面黃>面黃</option>
+  <option value=脈沉細>脈沉細</option>
+  <option value=脉沉弦涩>脉沉弦涩</option>
+  <option value=目紅面赤>目紅面赤</option>
+  <option value=脈實>脈實</option>
+  <option value=目弔口噤>目弔口噤</option>
+  <option value=脈浮數有力>脈浮數有力</option>
+  <option value=脈浮濡無力>脈浮濡無力</option>
+  <option value=脈細弱>脈細弱</option>
+  <option value=脈細弱>脈細弱</option>
+  <option value=目痛>目痛</option>
+  <option value=面色萎黃>面色萎黃</option>
+  <option value=脈細數>脈細數</option>
+  <option value=脈沈細>脈沈細</option>
+  <option value=脈沈微>脈沈微</option>
+  <option value=脈洪數>脈洪數</option>
+  <option value=脈沈實或滑數>脈沈實或滑數</option>
+  <option value=脈滑疾>脈滑疾</option>
+  <option value=脈沈而細>脈沈而細</option>
+  <option value=脈虛軟無力>脈虛軟無力</option>
+  <option value=脈沈遲無力>脈沈遲無力</option>
+  <option value=脈沈實緊數或動滑>脈沈實緊數或動滑</option>
+  <option value=面浮腫>面浮腫</option>
+  <option value=面痛>面痛</option>
+  <option value=面色痿白>面色痿白</option>
+  <option value=面色萎黃>面色萎黃</option>
+  <option value=脈洪大有力>脈洪大有力</option>
+  <option value=脈右寸必遲>脈右寸必遲</option>
+  <option value=難產>難產</option>
+  <option value=內傷生冷之證>內傷生冷之證</option>
+  <option value=膿出清稀>膿出清稀</option>
+  <option value=溺赤>溺赤</option>
+  <option value=瘧>瘧</option>
+  <option value=內餘瘀血>內餘瘀血</option>
+  <option value=粘稠難喀>粘稠難喀</option>
+  <option value=腦溢血>腦溢血</option>
+  <option value=尿赤短少>尿赤短少</option>
+  <option value=內燥>內燥</option>
+  <option value=尿時刺痛>尿時刺痛</option>
+  <option value=尿短便秘>尿短便秘</option>
+  <option value=腦血管意外>腦血管意外</option>
+  <option value=膿瘻病>膿瘻病</option>
+  <option value=納呆>納呆</option>
+  <option value=腦膜炎>腦膜炎</option>
+  <option value=尿短赤便難>尿短赤便難</option>
+  <option value=囊縮>囊縮</option>
+  <option value=尿少色黃>尿少色黃</option>
+  <option value=內傷飲冷>內傷飲冷</option>
+  <option value=瘧久不已>瘧久不已</option>
+  <option value=納差>納差</option>
+  <option value=尿赤便秘>尿赤便秘</option>
+  <option value=尿血>尿血</option>
+  <option value=瘧久不愈>瘧久不愈</option>
+  <option value=內虛蘊熱>內虛蘊熱</option>
+  <option value=膿水不絕或痛或癢>膿水不絕或痛或癢</option>
+  <option value=尿頻澀痛>尿頻澀痛</option>
+  <option value=納呆作瀉>納呆作瀉</option>
+  <option value=內傷痰飲>內傷痰飲</option>
+  <option value=尿少>尿少</option>
+  <option value=逆氣上衝>逆氣上衝</option>
+  <option value=嘔膿>嘔膿</option>
+  <option value=嘔吐下利腸鳴>嘔吐下利腸鳴</option>
+  <option value=嘔惡脘痞>嘔惡脘痞</option>
+  <option value=嘔吐腹痛>嘔吐腹痛</option>
+  <option value=嘔吐>嘔吐</option>
+  <option value=嘔吐不渴>嘔吐不渴</option>
+  <option value=嘔吐噁心>嘔吐噁心</option>
+  <option value=嘔吐涎沫>嘔吐涎沫</option>
+  <option value=嘔逆煩渴>嘔逆煩渴</option>
+  <option value=嘔吐腹痛>嘔吐腹痛</option>
+  <option value=嘔逆噁心>嘔逆噁心</option>
+  <option value=嘔吐酸水>嘔吐酸水</option>
+  <option value=脾寒>脾寒</option>
+  <option value=脾胃氣虛夾濕證>脾胃氣虛夾濕證</option>
+  <option value=脾胃不和>脾胃不和</option>
+  <option value=皮膚皴揭>皮膚皴揭</option>
+  <option value=脾受克制>脾受克制</option>
+  <option value=脾肺虛寒>脾肺虛寒</option>
+  <option value=脾實>脾實</option>
+  <option value=脾虛所致的遺精>脾虛所致的遺精</option>
+  <option value=皮膚涼>皮膚涼</option>
+  <option value=脾胃虛弱>脾胃虛弱</option>
+  <option value=偏墜>偏墜</option>
+  <option value=噴嚏鼻塞>噴嚏鼻塞</option>
+  <option value=脾胃伏火>脾胃伏火</option>
+  <option value=膀胱氣>膀胱氣</option>
+  <option value=脾熱>脾熱</option>
+  <option value=排出紫黑色血或夾血塊>排出紫黑色血或夾血塊</option>
+  <option value=痞積>痞積</option>
+  <option value=脾虛>脾虛</option>
+  <option value=貧血體質>貧血體質</option>
+  <option value=脾虛氣滯>脾虛氣滯</option>
+  <option value=脾虛濕阻證>脾虛濕阻證</option>
+  <option value=痞氣>痞氣</option>
+  <option value=脾胃濕阻證>脾胃濕阻證</option>
+  <option value=皮膚蒸熱午後尤甚>皮膚蒸熱午後尤甚</option>
+  <option value=清涕咳嗽>清涕咳嗽</option>
+  <option value=其症溺澀溺短>其症溺澀溺短</option>
+  <option value=氣上衝心>氣上衝心</option>
+  <option value=其症頭痛>其症頭痛</option>
+  <option value=氣粗>氣粗</option>
+  <option value=其症小腸氣>其症小腸氣</option>
+  <option value=蕁麻疹>蕁麻疹</option>
+  <option value=其症久痢>其症久痢</option>
+  <option value=祛寒止痛>祛寒止痛</option>
+  <option value=強中>強中</option>
+  <option value=其症頭汗>其症頭汗</option>
+  <option value=乾燥閉塞不通>乾燥閉塞不通</option>
+  <option value=氣短呃逆>氣短呃逆</option>
+  <option value=乾嘔>乾嘔</option>
+  <option value=其症精滑>其症精滑</option>
+  <option value=乾燥枯槁>乾燥枯槁</option>
+  <option value=氣積>氣積</option>
+  <option value=氣逆不降>氣逆不降</option>
+  <option value=全身水腫>全身水腫</option>
+  <option value=情志不遂>情志不遂</option>
+  <option value=氣滯>氣滯</option>
+  <option value=驅蟲止痛>驅蟲止痛</option>
+  <option value=氣不舒快>氣不舒快</option>
+  <option value=氣血俱虛>氣血俱虛</option>
+  <option value=其症目赤>其症目赤</option>
+  <option value=前額頭痛>前額頭痛</option>
+  <option value=气血不足>气血不足</option>
+  <option value=氣息腥臭>氣息腥臭</option>
+  <option value=氣短倦怠>氣短倦怠</option>
+  <option value=全身痠痛>全身痠痛</option>
+  <option value=氣冷>氣冷</option>
+  <option value=蜷臥>蜷臥</option>
+  <option value=蜷臥厥冷>蜷臥厥冷</option>
+  <option value=其症口燥咽乾>其症口燥咽乾</option>
+  <option value=氣虛外感風寒>氣虛外感風寒</option>
+  <option value=氣短身疲>氣短身疲</option>
+  <option value=其症清涕>其症清涕</option>
+  <option value=氣上湊心>氣上湊心</option>
+  <option value=其症自汗>其症自汗</option>
+  <option value=其症溺赤短>其症溺赤短</option>
+  <option value=其症小便不禁>其症小便不禁</option>
+  <option value=氣急>氣急</option>
+  <option value=氣虛血少>氣虛血少</option>
+  <option value=其症便血>其症便血</option>
+  <option value=其症胸滿>其症胸滿</option>
+  <option value=其症驚悸>其症驚悸</option>
+  <option value=氣血兼虛>氣血兼虛</option>
+  <option value=氣短懶言>氣短懶言</option>
+  <option value=其症氣閉>其症氣閉</option>
+  <option value=侵淫瘡瘍>侵淫瘡瘍</option>
+  <option value=其症口苦>其症口苦</option>
+  <option value=乾咳無痰>乾咳無痰</option>
+  <option value=氣血不足>氣血不足</option>
+  <option value=氣閉不通>氣閉不通</option>
+  <option value=其症命門火衰>其症命門火衰</option>
+  <option value=氣虛發熱證>氣虛發熱證</option>
+  <option value=其症咳嗽失氣>其症咳嗽失氣</option>
+  <option value=气息喘惫>气息喘惫</option>
+  <option value=氣津兩傷>氣津兩傷</option>
+  <option value=氣上衝咽喉不得息>氣上衝咽喉不得息</option>
+  <option value=氣虛>氣虛</option>
+  <option value=其症便閉>其症便閉</option>
+  <option value=妊娠期伤寒各症分别论治>妊娠期伤寒各症分别论治</option>
+  <option value=日晡發熱>日晡發熱</option>
+  <option value=熱在肌肉>熱在肌肉</option>
+  <option value=熱成勞>熱成勞</option>
+  <option value=妊娠水腫>妊娠水腫</option>
+  <option value=乳腺炎>乳腺炎</option>
+  <option value=熱邪入裡>熱邪入裡</option>
+  <option value=繞項結核>繞項結核</option>
+  <option value=熱吐>熱吐</option>
+  <option value=熱病後期>熱病後期</option>
+  <option value=軟堅散結>軟堅散結</option>
+  <option value=妊娠脐下急痛>妊娠脐下急痛</option>
+  <option value=妊娠嘔吐>妊娠嘔吐</option>
+  <option value=熱入血分熱傷血絡之證>熱入血分熱傷血絡之證</option>
+  <option value=熱毒痰瘀>熱毒痰瘀</option>
+  <option value=熱如火燎>熱如火燎</option>
+  <option value=妊娠糖尿病>妊娠糖尿病</option>
+  <option value=熱甚發斑>熱甚發斑</option>
+  <option value=熱盛抽搐>熱盛抽搐</option>
+  <option value=熱結旁流下利>熱結旁流下利</option>
+  <option value=妊娠中風>妊娠中風</option>
+  <option value=妊娠小便不通>妊娠小便不通</option>
+  <option value=傷寒裡熱已熾>傷寒裡熱已熾</option>
+  <option value=舌紫暗或有瘀斑>舌紫暗或有瘀斑</option>
+  <option value=舌淡紅>舌淡紅</option>
+  <option value=舌捲>舌捲</option>
+  <option value=手足瘛疭>手足瘛疭</option>
+  <option value=神疲乏力>神疲乏力</option>
+  <option value=水閉發喘>水閉發喘</option>
+  <option value=神經機能病>神經機能病</option>
+  <option value=身黃肌熱>身黃肌熱</option>
+  <option value=濕熱積滯>濕熱積滯</option>
+  <option value=傷寒門有之>傷寒門有之</option>
+  <option value=身熱>身熱</option>
+  <option value=舌燥苔黃厚>舌燥苔黃厚</option>
+  <option value=上攻胸膈>上攻胸膈</option>
+  <option value=嗽水不欲咽>嗽水不欲咽</option>
+  <option value=傷暑風>傷暑風</option>
+  <option value=舌淡苔薄白>舌淡苔薄白</option>
+  <option value=腎之虛>腎之虛</option>
+  <option value=舌苔白滑>舌苔白滑</option>
+  <option value=舌苔白薄>舌苔白薄</option>
+  <option value=善太息>善太息</option>
+  <option value=身痛肢倦>身痛肢倦</option>
+  <option value=舌紅苔黃>舌紅苔黃</option>
+  <option value=三消>三消</option>
+  <option value=舌紅脈數>舌紅脈數</option>
+  <option value=食下作痛>食下作痛</option>
+  <option value=神志不寧>神志不寧</option>
+  <option value=疝瘕>疝瘕</option>
+  <option value=神疲欲寐>神疲欲寐</option>
+  <option value=舌紅>舌紅</option>
+  <option value=食入反出>食入反出</option>
+  <option value=舌苔薄白>舌苔薄白</option>
+  <option value=屬風熱引起的正偏頭痛>屬風熱引起的正偏頭痛</option>
+  <option value=上盛下虛>上盛下虛</option>
+  <option value=傷溼身重>傷溼身重</option>
+  <option value=四肢乏力>四肢乏力</option>
+  <option value=時氣>時氣</option>
+  <option value=舌苔黃厚>舌苔黃厚</option>
+  <option value=舌尖赤>舌尖赤</option>
+  <option value=四肢不溫>四肢不溫</option>
+  <option value=水將涸也>水將涸也</option>
+  <option value=食積停滯證>食積停滯證</option>
+  <option value=實瘧久發不止>實瘧久發不止</option>
+  <option value=舌淡白>舌淡白</option>
+  <option value=時發寒熱>時發寒熱</option>
+  <option value=腎炎>腎炎</option>
+  <option value=身熱微惡寒>身熱微惡寒</option>
+  <option value=舌嫩紅>舌嫩紅</option>
+  <option value=四肢怠惰>四肢怠惰</option>
+  <option value=手足心發熱>手足心發熱</option>
+  <option value=舌紅少苔>舌紅少苔</option>
+  <option value=少苔>少苔</option>
+  <option value=身痛>身痛</option>
+  <option value=舌卷>舌卷</option>
+  <option value=神經性皮炎>神經性皮炎</option>
+  <option value=上攻咽喉>上攻咽喉</option>
+  <option value=生津止渴>生津止渴</option>
+  <option value=疝氣疼痛>疝氣疼痛</option>
+  <option value=食少倦怠面色萎黃>食少倦怠面色萎黃</option>
+  <option value=身體羸瘦>身體羸瘦</option>
+  <option value=四肢厥逆（陽邪）>四肢厥逆（陽邪）</option>
+  <option value=嗜睡症>嗜睡症</option>
+  <option value=傷食>傷食</option>
+  <option value=舌潤>舌潤</option>
+  <option value=傷寒少陽證>傷寒少陽證</option>
+  <option value=手足不溫>手足不溫</option>
+  <option value=溼熱內攻>溼熱內攻</option>
+  <option value=濕滯脾胃>濕滯脾胃</option>
+  <option value=時出濁沫>時出濁沫</option>
+  <option value=腎消兩腿漸細>腎消兩腿漸細</option>
+  <option value=舌光少苔>舌光少苔</option>
+  <option value=四肢厥冷>四肢厥冷</option>
+  <option value=舌苔滑>舌苔滑</option>
+  <option value=傷寒熱邪傳裏>傷寒熱邪傳裏</option>
+  <option value=上氣喘急>上氣喘急</option>
+  <option value=舌黑燥渴>舌黑燥渴</option>
+  <option value=燒燙傷>燒燙傷</option>
+  <option value=舌紅苔黃>舌紅苔黃</option>
+  <option value=舌強不能言>舌強不能言</option>
+  <option value=腎之虛也>腎之虛也</option>
+  <option value=身熱（肌熱）>身熱（肌熱）</option>
+  <option value=上逆>上逆</option>
+  <option value=濕熱相搏>濕熱相搏</option>
+  <option value=失眠健忘>失眠健忘</option>
+  <option value=声音不出>声音不出</option>
+  <option value=腎之寒>腎之寒</option>
+  <option value=舌苔厚膩>舌苔厚膩</option>
+  <option value=舌燥口渴>舌燥口渴</option>
+  <option value=食則嘔逆>食則嘔逆</option>
+  <option value=濕性肋膜炎>濕性肋膜炎</option>
+  <option value=腎氣不固>腎氣不固</option>
+  <option value=水蟲>水蟲</option>
+  <option value=舌紅少苔>舌紅少苔</option>
+  <option value=舌淡>舌淡</option>
+  <option value=四肢倦怠>四肢倦怠</option>
+  <option value=舌苔白膩>舌苔白膩</option>
+  <option value=声音嘶塞>声音嘶塞</option>
+  <option value=舌灰黑而滑>舌灰黑而滑</option>
+  <option value=視力>視力</option>
+  <option value=手足厥冷>手足厥冷</option>
+  <option value=食積>食積</option>
+  <option value=身熱>身熱</option>
+  <option value=舌淡苔白>舌淡苔白</option>
+  <option value=少陰病下利脈微>少陰病下利脈微</option>
+  <option value=濕熱內蘊所致腸風臟毒痔瘡便血>濕熱內蘊所致腸風臟毒痔瘡便血</option>
+  <option value=四肢發熱>四肢發熱</option>
+  <option value=身重食少>身重食少</option>
+  <option value=濕熱毒>濕熱毒</option>
+  <option value=時發昏憒>時發昏憒</option>
+  <option value=身熱無汗>身熱無汗</option>
+  <option value=舌淡苔白膩>舌淡苔白膩</option>
+  <option value=少氣懶言>少氣懶言</option>
+  <option value=神疲納呆>神疲納呆</option>
+  <option value=使臨盆易產>使臨盆易產</option>
+  <option value=室女思慮過度>室女思慮過度</option>
+  <option value=舌苔薄黃>舌苔薄黃</option>
+  <option value=三焦火熱證>三焦火熱證</option>
+  <option value=腎之熱>腎之熱</option>
+  <option value=暑熱證>暑熱證</option>
+  <option value=色白毛敗>色白毛敗</option>
+  <option value=舌絳>舌絳</option>
+  <option value=神昏譫語>神昏譫語</option>
+  <option value=暑月酒食所傷>暑月酒食所傷</option>
+  <option value=食慾不振>食慾不振</option>
+  <option value=舌黑無液>舌黑無液</option>
+  <option value=嗜酒太過>嗜酒太過</option>
+  <option value=身熱多汗>身熱多汗</option>
+  <option value=水濕壅盛>水濕壅盛</option>
+  <option value=舌燥煩渴>舌燥煩渴</option>
+  <option value=疝氣>疝氣</option>
+  <option value=舌黑>舌黑</option>
+  <option value=實火蘊結>實火蘊結</option>
+  <option value=暑閉>暑閉</option>
+  <option value=水腫>水腫</option>
+  <option value=舌淡苔白>舌淡苔白</option>
+  <option value=舌苔老黃>舌苔老黃</option>
+  <option value=濕疹>濕疹</option>
+  <option value=濕腫>濕腫</option>
+  <option value=舌苔白膩>舌苔白膩</option>
+  <option value=舌苔黃膩>舌苔黃膩</option>
+  <option value=石淋>石淋</option>
+  <option value=濕熱>濕熱</option>
+  <option value=舌淡苔白滑>舌淡苔白滑</option>
+  <option value=舌紅脈數；自汗>舌紅脈數；自汗</option>
+  <option value=舌苔黃>舌苔黃</option>
+  <option value=四肢拘急>四肢拘急</option>
+  <option value=身體疼痛>身體疼痛</option>
+  <option value=實熱老痰>實熱老痰</option>
+  <option value=四肢厥冷（陰邪）>四肢厥冷（陰邪）</option>
+  <option value=吐衄發斑>吐衄發斑</option>
+  <option value=苔黃>苔黃</option>
+  <option value=痰中帶血>痰中帶血</option>
+  <option value=吐瀉霍亂>吐瀉霍亂</option>
+  <option value=吐下後胃虛有熱>吐下後胃虛有熱</option>
+  <option value=頭暈鼻塞>頭暈鼻塞</option>
+  <option value=痰厥頭痛>痰厥頭痛</option>
+  <option value=頭汗>頭汗</option>
+  <option value=體虛自汗>體虛自汗</option>
+  <option value=停滯>停滯</option>
+  <option value=苔白>苔白</option>
+  <option value=涕出不已>涕出不已</option>
+  <option value=痛處固定刺痛拒按>痛處固定刺痛拒按</option>
+  <option value=腿酸足軟>腿酸足軟</option>
+  <option value=頭暈心悸>頭暈心悸</option>
+  <option value=苔薄白>苔薄白</option>
+  <option value=痰閉>痰閉</option>
+  <option value=停痞>停痞</option>
+  <option value=吐瀉腸鳴>吐瀉腸鳴</option>
+  <option value=脫肛>脫肛</option>
+  <option value=痰盛>痰盛</option>
+  <option value=痰涎湧盛>痰涎湧盛</option>
+  <option value=體倦少氣>體倦少氣</option>
+  <option value=頭痛身疼>頭痛身疼</option>
+  <option value=吞酸噯腐>吞酸噯腐</option>
+  <option value=頭目昏痛>頭目昏痛</option>
+  <option value=頭痛身疼>頭痛身疼</option>
+  <option value=頭眩體重>頭眩體重</option>
+  <option value=停飲>停飲</option>
+  <option value=痰沾不爽>痰沾不爽</option>
+  <option value=頭眩心悸>頭眩心悸</option>
+  <option value=痰多而清稀>痰多而清稀</option>
+  <option value=苔黃膩>苔黃膩</option>
+  <option value=頭痛>頭痛</option>
+  <option value=聤耳>聤耳</option>
+  <option value=痰>痰</option>
+  <option value=頭面疙瘩腫痛>頭面疙瘩腫痛</option>
+  <option value=頭痛發熱>頭痛發熱</option>
+  <option value=吐瀉>吐瀉</option>
+  <option value=痰涎不利>痰涎不利</option>
+  <option value=吐蛔>吐蛔</option>
+  <option value=胎死腹中>胎死腹中</option>
+  <option value=頭面紅腫疼痛>頭面紅腫疼痛</option>
+  <option value=頭眩>頭眩</option>
+  <option value=吐瀉腹痛不渴>吐瀉腹痛不渴</option>
+  <option value=痰迷>痰迷</option>
+  <option value=頭眩心悸>頭眩心悸</option>
+  <option value=頭暈昏眩>頭暈昏眩</option>
+  <option value=胎氣不調>胎氣不調</option>
+  <option value=吐>吐</option>
+  <option value=體痛咳嗽>體痛咳嗽</option>
+  <option value=痰中帶血>痰中帶血</option>
+  <option value=苔薄白或薄黃>苔薄白或薄黃</option>
+  <option value=苔白>苔白</option>
+  <option value=痰積>痰積</option>
+  <option value=吐血>吐血</option>
+  <option value=頭痛鼻塞>頭痛鼻塞</option>
+  <option value=痰飲>痰飲</option>
+  <option value=痰饮阻塞证>痰饮阻塞证</option>
+  <option value=頭痛如裂>頭痛如裂</option>
+  <option value=苔膩>苔膩</option>
+  <option value=痰唾稠粘>痰唾稠粘</option>
+  <option value=痰涎宿食填塞上脘>痰涎宿食填塞上脘</option>
+  <option value=頭暈目眩>頭暈目眩</option>
+  <option value=頭痛甚>頭痛甚</option>
+  <option value=苔白膩>苔白膩</option>
+  <option value=痛利清水>痛利清水</option>
+  <option value=痰多如膠漆>痰多如膠漆</option>
+  <option value=天柱骨倒>天柱骨倒</option>
+  <option value=苔白膩>苔白膩</option>
+  <option value=癱瘓>癱瘓</option>
+  <option value=頭暈>頭暈</option>
+  <option value=痰中挾血>痰中挾血</option>
+  <option value=胎動不安>胎動不安</option>
+  <option value=頭重痛>頭重痛</option>
+  <option value=體重拘急>體重拘急</option>
+  <option value=苔潤滑>苔潤滑</option>
+  <option value=痰熱阻肺證>痰熱阻肺證</option>
+  <option value=苔白舌胖>苔白舌胖</option>
+  <option value=痰涎壅盛>痰涎壅盛</option>
+  <option value=吐清沫>吐清沫</option>
+  <option value=苔白脈沉弦>苔白脈沉弦</option>
+  <option value=腿腫脹痛>腿腫脹痛</option>
+  <option value=苔白薄>苔白薄</option>
+  <option value=體重節痛>體重節痛</option>
+  <option value=頭痛且重>頭痛且重</option>
+  <option value=痰飲吐涎沫>痰飲吐涎沫</option>
+  <option value=疼痛>疼痛</option>
+  <option value=吐血衄血>吐血衄血</option>
+  <option value=頭目眩暈>頭目眩暈</option>
+  <option value=痰濕內阻>痰濕內阻</option>
+  <option value=痰飲病>痰飲病</option>
+  <option value=頭痛發熱>頭痛發熱</option>
+  <option value=苔白厚>苔白厚</option>
+  <option value=苔黃膩>苔黃膩</option>
+  <option value=痰稠色黃>痰稠色黃</option>
+  <option value=太息>太息</option>
+  <option value=外感正偏頭痛>外感正偏頭痛</option>
+  <option value=痿躄促>痿躄促</option>
+  <option value=胃脘痛>胃脘痛</option>
+  <option value=痿證>痿證</option>
+  <option value=脘腹脹>脘腹脹</option>
+  <option value=外感風寒濕邪>外感風寒濕邪</option>
+  <option value=胃虛>胃虛</option>
+  <option value=外感居多>外感居多</option>
+  <option value=無汗心煩>無汗心煩</option>
+  <option value=外感風寒>外感風寒</option>
+  <option value=温中养血>温中养血</option>
+  <option value=外感表證未解>外感表證未解</option>
+  <option value=完穀不化>完穀不化</option>
+  <option value=胃之實>胃之實</option>
+  <option value=畏風>畏風</option>
+  <option value=畏寒喜溫>畏寒喜溫</option>
+  <option value=外感風寒襲肺>外感風寒襲肺</option>
+  <option value=胃之熱>胃之熱</option>
+  <option value=胃虛痰濁上逆>胃虛痰濁上逆</option>
+  <option value=五更欬嗽>五更欬嗽</option>
+  <option value=溫病應發汗而不汗之內畜血者>溫病應發汗而不汗之內畜血者</option>
+  <option value=脘腹脹滿>脘腹脹滿</option>
+  <option value=胃脘有死血>胃脘有死血</option>
+  <option value=外感風濕表證>外感風濕表證</option>
+  <option value=往來寒熱>往來寒熱</option>
+  <option value=胃熱善消水穀>胃熱善消水穀</option>
+  <option value=外有表邪內有裡實>外有表邪內有裡實</option>
+  <option value=脘悶便溏>脘悶便溏</option>
+  <option value=胃酸過多>胃酸過多</option>
+  <option value=胃潰瘍吐血>胃潰瘍吐血</option>
+  <option value=脘腹脹滿>脘腹脹滿</option>
+  <option value=五火煩熱>五火煩熱</option>
+  <option value=溫經回陽>溫經回陽</option>
+  <option value=無汗>無汗</option>
+  <option value=脘腹脹滿時痛>脘腹脹滿時痛</option>
+  <option value=胃中濕熱滲入膀胱>胃中濕熱滲入膀胱</option>
+  <option value=外感寒邪>外感寒邪</option>
+  <option value=胃氣不和>胃氣不和</option>
+  <option value=脘腹脹痛>脘腹脹痛</option>
+  <option value=往來寒熱>往來寒熱</option>
+  <option value=無汗而喘>無汗而喘</option>
+  <option value=五更泄瀉>五更泄瀉</option>
+  <option value=無汗>無汗</option>
+  <option value=胃脘劇痛>胃脘劇痛</option>
+  <option value=胃下垂>胃下垂</option>
+  <option value=胃腸炎>胃腸炎</option>
+  <option value=心悸>心悸</option>
+  <option value=胸脹痛>胸脹痛</option>
+  <option value=虛勞陰虛火旺>虛勞陰虛火旺</option>
+  <option value=吸門不開>吸門不開</option>
+  <option value=習慣性遺尿>習慣性遺尿</option>
+  <option value=眩暈>眩暈</option>
+  <option value=脅痛食少>脅痛食少</option>
+  <option value=脇肋脹疼>脇肋脹疼</option>
+  <option value=心脾冷痛不可忍>心脾冷痛不可忍</option>
+  <option value=胸滿少食>胸滿少食</option>
+  <option value=心煩尿赤>心煩尿赤</option>
+  <option value=小兒噴嚏流淚>小兒噴嚏流淚</option>
+  <option value=心腹脹滿>心腹脹滿</option>
+  <option value=涎潮忽仆>涎潮忽仆</option>
+  <option value=心力衰竭>心力衰竭</option>
+  <option value=心下痞>心下痞</option>
+  <option value=胸腹脹悶>胸腹脹悶</option>
+  <option value=下利>下利</option>
+  <option value=脇肋刺痛>脇肋刺痛</option>
+  <option value=胸滿振寒>胸滿振寒</option>
+  <option value=夏月吐瀉>夏月吐瀉</option>
+  <option value=邪高痛下>邪高痛下</option>
+  <option value=脅痛>脅痛</option>
+  <option value=心虛>心虛</option>
+  <option value=胸脅苦滿>胸脅苦滿</option>
+  <option value=下腹拘急硬痛>下腹拘急硬痛</option>
+  <option value=胸膈脹悶>胸膈脹悶</option>
+  <option value=夏天濕盛>夏天濕盛</option>
+  <option value=胸悶氣短>胸悶氣短</option>
+  <option value=血虚不能服发汗药>血虚不能服发汗药</option>
+  <option value=小便黃赤>小便黃赤</option>
+  <option value=新病暴虛>新病暴虛</option>
+  <option value=虛勞腹痛>虛勞腹痛</option>
+  <option value=血少有熱>血少有熱</option>
+  <option value=小腹痛>小腹痛</option>
+  <option value=心腹疼痛>心腹疼痛</option>
+  <option value=血熱妄行之出血證>血熱妄行之出血證</option>
+  <option value=胸膈煩熱>胸膈煩熱</option>
+  <option value=夏月時感或四時感冒>夏月時感或四時感冒</option>
+  <option value=胸痹>胸痹</option>
+  <option value=虛勞>虛勞</option>
+  <option value=小便短>小便短</option>
+  <option value=心胸煩熱>心胸煩熱</option>
+  <option value=項背腰股拘急>項背腰股拘急</option>
+  <option value=小便频数或癃闭>小便频数或癃闭</option>
+  <option value=心悸胸悶>心悸胸悶</option>
+  <option value=行遠路>行遠路</option>
+  <option value=小便出血>小便出血</option>
+  <option value=下半身腫較甚>下半身腫較甚</option>
+  <option value=心腹膨脹>心腹膨脹</option>
+  <option value=血虛>血虛</option>
+  <option value=胸滿惡食>胸滿惡食</option>
+  <option value=泄熱消痞>泄熱消痞</option>
+  <option value=虚劳>虚劳</option>
+  <option value=小兒>小兒</option>
+  <option value=小便自利>小便自利</option>
+  <option value=小便不利>小便不利</option>
+  <option value=瀉渤>瀉渤</option>
+  <option value=虛人外感>虛人外感</option>
+  <option value=小兒夏季熱>小兒夏季熱</option>
+  <option value=小便淋濁>小便淋濁</option>
+  <option value=形體羸瘦>形體羸瘦</option>
+  <option value=小兒慢驚等屬中焦陽虛>小兒慢驚等屬中焦陽虛</option>
+  <option value=心熱>心熱</option>
+  <option value=胸腹脹滿>胸腹脹滿</option>
+  <option value=哮喘證>哮喘證</option>
+  <option value=虛贏少氣>虛贏少氣</option>
+  <option value=下痢赤白>下痢赤白</option>
+  <option value=下痢>下痢</option>
+  <option value=虛風上擾>虛風上擾</option>
+  <option value=胸腹痞滿>胸腹痞滿</option>
+  <option value=心神恍惚>心神恍惚</option>
+  <option value=血枯>血枯</option>
+  <option value=虛勞肺痿>虛勞肺痿</option>
+  <option value=胸脅腫痛刺痛>胸脅腫痛刺痛</option>
+  <option value=心實>心實</option>
+  <option value=小便頻數>小便頻數</option>
+  <option value=先喘而後腫>先喘而後腫</option>
+  <option value=心煩>心煩</option>
+  <option value=項背強痛>項背強痛</option>
+  <option value=心血虛少>心血虛少</option>
+  <option value=心移熱於小腸>心移熱於小腸</option>
+  <option value=心煩喜嘔>心煩喜嘔</option>
+  <option value=血積>血積</option>
+  <option value=心下痞 眩悸>心下痞 眩悸</option>
+  <option value=心煩口渴>心煩口渴</option>
+  <option value=小便赤濁或帶下偏黃>小便赤濁或帶下偏黃</option>
+  <option value=虛煩不得眠>虛煩不得眠</option>
+  <option value=胸悶嘔噁>胸悶嘔噁</option>
+  <option value=喜温喜按>喜温喜按</option>
+  <option value=脅痛頭痛>脅痛頭痛</option>
+  <option value=眩暈耳鳴>眩暈耳鳴</option>
+  <option value=喜熱湯>喜熱湯</option>
+  <option value=心悸怔忡>心悸怔忡</option>
+  <option value=胁痛>胁痛</option>
+  <option value=胸膈膨悶>胸膈膨悶</option>
+  <option value=小便短赤>小便短赤</option>
+  <option value=胸脘痞滿>胸脘痞滿</option>
+  <option value=小便澀滯>小便澀滯</option>
+  <option value=下濁不止>下濁不止</option>
+  <option value=血痛>血痛</option>
+  <option value=虛火>虛火</option>
+  <option value=胸膈>胸膈</option>
+  <option value=血虛有火>血虛有火</option>
+  <option value=泄利下重>泄利下重</option>
+  <option value=消渴>消渴</option>
+  <option value=血淋>血淋</option>
+  <option value=胸脘煩熱>胸脘煩熱</option>
+  <option value=血氣走疰>血氣走疰</option>
+  <option value=項脊強>項脊強</option>
+  <option value=習慣性便秘>習慣性便秘</option>
+  <option value=下焦病>下焦病</option>
+  <option value=胸中煩熱>胸中煩熱</option>
+  <option value=心下痞滿>心下痞滿</option>
+  <option value=虛痛>虛痛</option>
+  <option value=夏季外感暑邪內傷生冷>夏季外感暑邪內傷生冷</option>
+  <option value=血不足>血不足</option>
+  <option value=脅下痞滿>脅下痞滿</option>
+  <option value=小便濁>小便濁</option>
+  <option value=行氣止痛>行氣止痛</option>
+  <option value=小便短赤而濇>小便短赤而濇</option>
+  <option value=心動悸>心動悸</option>
+  <option value=胸脘痞悶>胸脘痞悶</option>
+  <option value=瀉胸脘悶脹>瀉胸脘悶脹</option>
+  <option value=眩暈耳鳴>眩暈耳鳴</option>
+  <option value=心下虛痞>心下虛痞</option>
+  <option value=胸脹悶>胸脹悶</option>
+  <option value=小便不禁>小便不禁</option>
+  <option value=心經熱證>心經熱證</option>
+  <option value=下利清榖>下利清榖</option>
+  <option value=小便赤澀>小便赤澀</option>
+  <option value=脅腹疼痛>脅腹疼痛</option>
+  <option value=泄瀉>泄瀉</option>
+  <option value=胸痛>胸痛</option>
+  <option value=心胸煩悶>心胸煩悶</option>
+  <option value=心悸>心悸</option>
+  <option value=胸膈不利>胸膈不利</option>
+  <option value=胸滿>胸滿</option>
+  <option value=心寒>心寒</option>
+  <option value=下利臭穢>下利臭穢</option>
+  <option value=胸脘煩悶>胸脘煩悶</option>
+  <option value=小便短少>小便短少</option>
+  <option value=小腹滿>小腹滿</option>
+  <option value=胸膈不舒>胸膈不舒</option>
+  <option value=胸滿痛>胸滿痛</option>
+  <option value=胸中痞硬>胸中痞硬</option>
+  <option value=心胸攻築>心胸攻築</option>
+  <option value=小便不利>小便不利</option>
+  <option value=血風勞>血風勞</option>
+  <option value=胸膈痞悶>胸膈痞悶</option>
+  <option value=下焦結熱血淋>下焦結熱血淋</option>
+  <option value=形體消瘦>形體消瘦</option>
+  <option value=虛煩失眠>虛煩失眠</option>
+  <option value=壅結足陽明經脈>壅結足陽明經脈</option>
+  <option value=咽乾舌燥>咽乾舌燥</option>
+  <option value=陽明熱盛（氣分實熱）>陽明熱盛（氣分實熱）</option>
+  <option value=陽虛陰水>陽虛陰水</option>
+  <option value=運化失常>運化失常</option>
+  <option value=月經耗損>月經耗損</option>
+  <option value=咽痛>咽痛</option>
+  <option value=咽痛喉痹；風熱鬱肺>咽痛喉痹；風熱鬱肺</option>
+  <option value=一身盡痛身重>一身盡痛身重</option>
+  <option value=牙痛齦腫>牙痛齦腫</option>
+  <option value=夜熱潮熱>夜熱潮熱</option>
+  <option value=右關洪實>右關洪實</option>
+  <option value=一身盡黃或目微黃>一身盡黃或目微黃</option>
+  <option value=右關沉遲>右關沉遲</option>
+  <option value=睪丸鞘膜積液>睪丸鞘膜積液</option>
+  <option value=癰>癰</option>
+  <option value=咽乾不渴>咽乾不渴</option>
+  <option value=咽膈不利>咽膈不利</option>
+  <option value=壅結手足少陽經脈>壅結手足少陽經脈</option>
+  <option value=陽明腑證>陽明腑證</option>
+  <option value=右關洪>右關洪</option>
+  <option value=右關細軟>右關細軟</option>
+  <option value=右尺細軟>右尺細軟</option>
+  <option value=夜寐不安>夜寐不安</option>
+  <option value=陰癢陰腫>陰癢陰腫</option>
+  <option value=腰腿痹痛>腰腿痹痛</option>
+  <option value=語言蹇澀>語言蹇澀</option>
+  <option value=因痰飲中結>因痰飲中結</option>
+  <option value=陰虛盜汗>陰虛盜汗</option>
+  <option value=右尺數>右尺數</option>
+  <option value=飲食不消>飲食不消</option>
+  <option value=言語蹇澀>言語蹇澀</option>
+  <option value=陰莖長興盛>陰莖長興盛</option>
+  <option value=噎膈>噎膈</option>
+  <option value=夜熱>夜熱</option>
+  <option value=飲食不下>飲食不下</option>
+  <option value=睪丸腫脹偏墜>睪丸腫脹偏墜</option>
+  <option value=飲水不入口>飲水不入口</option>
+  <option value=右寸脈浮>右寸脈浮</option>
+  <option value=抑制蛔蟲>抑制蛔蟲</option>
+  <option value=牙齦紅腫>牙齦紅腫</option>
+  <option value=牙宣出血>牙宣出血</option>
+  <option value=飲食不化或吐>飲食不化或吐</option>
+  <option value=噫氣頻作>噫氣頻作</option>
+  <option value=咽喉不清>咽喉不清</option>
+  <option value=腰痠耳鳴>腰痠耳鳴</option>
+  <option value=右脅痛>右脅痛</option>
+  <option value=飲食化痰>飲食化痰</option>
+  <option value=陽虛失血>陽虛失血</option>
+  <option value=孕婦氣血不足>孕婦氣血不足</option>
+  <option value=右關數>右關數</option>
+  <option value=陰虛>陰虛</option>
+  <option value=咽乾>咽乾</option>
+  <option value=腰痠乏力>腰痠乏力</option>
+  <option value=陽毒發斑>陽毒發斑</option>
+  <option value=藥物性皮炎>藥物性皮炎</option>
+  <option value=右關脈必浮>右關脈必浮</option>
+  <option value=右寸脈細>右寸脈細</option>
+  <option value=癰疽惡瘡不問發在何處>癰疽惡瘡不問發在何處</option>
+  <option value=遺尿>遺尿</option>
+  <option value=癔病>癔病</option>
+  <option value=月經不調>月經不調</option>
+  <option value=飲食不消>飲食不消</option>
+  <option value=言語蹇澀>言語蹇澀</option>
+  <option value=右關脈弦>右關脈弦</option>
+  <option value=咽乾口燥>咽乾口燥</option>
+  <option value=陽虛>陽虛</option>
+  <option value=陽明腑實之緩證>陽明腑實之緩證</option>
+  <option value=因食生冷>因食生冷</option>
+  <option value=腰背痠痛>腰背痠痛</option>
+  <option value=腰腳無力>腰腳無力</option>
+  <option value=右尺沉弱>右尺沉弱</option>
+  <option value=咽喉不利>咽喉不利</option>
+  <option value=右尺洪實>右尺洪實</option>
+  <option value=右尺沉數>右尺沉數</option>
+  <option value=癰瘡初發已發>癰瘡初發已發</option>
+  <option value=陰囊腫脹>陰囊腫脹</option>
+  <option value=餘熱未清>餘熱未清</option>
+  <option value=陽毒發斑>陽毒發斑</option>
+  <option value=月水不調>月水不調</option>
+  <option value=腰以下腫>腰以下腫</option>
+  <option value=遺尿或帶下清稀>遺尿或帶下清稀</option>
+  <option value=陽黃膽>陽黃膽</option>
+  <option value=腰痛>腰痛</option>
+  <option value=遺精>遺精</option>
+  <option value=幽門不通>幽門不通</option>
+  <option value=噎息煩悶>噎息煩悶</option>
+  <option value=右關必軟弱>右關必軟弱</option>
+  <option value=陽明腑實證>陽明腑實證</option>
+  <option value=瘀血>瘀血</option>
+  <option value=右尺沉遲>右尺沉遲</option>
+  <option value=益氣生脈>益氣生脈</option>
+  <option value=腰以上腫>腰以上腫</option>
+  <option value=語聲不出>語聲不出</option>
+  <option value=腰膝痠痛>腰膝痠痛</option>
+  <option value=左尺數>左尺數</option>
+  <option value=諸虛不足>諸虛不足</option>
+  <option value=躁煩>躁煩</option>
+  <option value=髒毒>髒毒</option>
+  <option value=壯熱>壯熱</option>
+  <option value=治產後百病>治產後百病</option>
+  <option value=正偏頭痛>正偏頭痛</option>
+  <option value=肢重浮腫>肢重浮腫</option>
+  <option value=燥渴>燥渴</option>
+  <option value=譫語>譫語</option>
+  <option value=中風卒然昏憒>中風卒然昏憒</option>
+  <option value=左關弦>左關弦</option>
+  <option value=左關浮弦>左關浮弦</option>
+  <option value=肢體痠痛>肢體痠痛</option>
+  <option value=左關空大>左關空大</option>
+  <option value=早間咯血>早間咯血</option>
+  <option value=足不任地>足不任地</option>
+  <option value=左關弦數>左關弦數</option>
+  <option value=譫語>譫語</option>
+  <option value=譫語狂亂>譫語狂亂</option>
+  <option value=足跗浮腫>足跗浮腫</option>
+  <option value=瘴氣>瘴氣</option>
+  <option value=中風>中風</option>
+  <option value=諸熱性疾病>諸熱性疾病</option>
+  <option value=轉失氣>轉失氣</option>
+  <option value=左尺浮>左尺浮</option>
+  <option value=中風諸證體虛者>中風諸證體虛者</option>
+  <option value=中焦虛寒證>中焦虛寒證</option>
+  <option value=左關遲>左關遲</option>
+  <option value=自汗>自汗</option>
+  <option value=肢體倦怠乏力>肢體倦怠乏力</option>
+  <option value=左尺沉遲>左尺沉遲</option>
+  <option value=足汗>足汗</option>
+  <option value=終日發熱>終日發熱</option>
+  <option value=左尺洪大>左尺洪大</option>
+  <option value=子宫肌瘤>子宫肌瘤</option>
+  <option value=諸出血皮膚炎>諸出血皮膚炎</option>
+  <option value=痔瘡痔漏有膿血>痔瘡痔漏有膿血</option>
+  <option value=肢軟>肢軟</option>
+  <option value=疹>疹</option>
+  <option value=症小便不通>症小便不通</option>
+  <option value=左尺遲>左尺遲</option>
+  <option value=自汗盜汗>自汗盜汗</option>
+  <option value=左寸遲>左寸遲</option>
+  <option value=左關洪>左關洪</option>
+  <option value=肢體困重>肢體困重</option>
+  <option value=左寸數>左寸數</option>
+  <option value=左關沉遲>左關沉遲</option>
+  <option value=重舌>重舌</option>
+  <option value=中風痰>中風痰</option>
+  <option value=中脘不快>中脘不快</option>
+  <option value=疹出不暢>疹出不暢</option>
+  <option value=痔瘡便血血色紫暗或鮮紅>痔瘡便血血色紫暗或鮮紅</option>
+  <option value=致成瘧母>致成瘧母</option>
+  <option value=足脛腫痛>足脛腫痛</option>
+  <option value=中氣下陷之證>中氣下陷之證</option>
+  <option value=左關細軟>左關細軟</option>
+  <option value=治夢遺失精>治夢遺失精</option>
+  <option value=症冷淋>症冷淋</option>
+  <option value=中時疫>中時疫</option>
+  <option value=症見午後或夜間骨蒸勞熱>症見午後或夜間骨蒸勞熱</option>
+  <option value=中風後遺症>中風後遺症</option>
+  <option value=左脅痛>左脅痛</option>
+  <option value=左寸弦大>左寸弦大</option>
+  <option value=左尺洪弦>左尺洪弦</option>
+  <option value=左關弱>左關弱</option>
+  <option value=左尺細軟>左尺細軟</option>
+  <option value=怔忡昏迷>怔忡昏迷</option>
+  <option value=諸氣>諸氣</option>
+  <option value=晝輕夜重>晝輕夜重</option>
+  <option value=自汗食少>自汗食少</option>
+  <option value=支氣管擴張咳血>支氣管擴張咳血</option>
+  <option value=怔忡>怔忡</option>
+  <option value=壯熱無汗>壯熱無汗</option>
+  <option value=自汗出>自汗出</option>
+  <option value=自汗>自汗</option>
+  <option value=症氣淋>症氣淋</option>
+  <option value=狀如傷寒>狀如傷寒</option>
+  <option value=左尺沉數>左尺沉數</option>
+  <option value=子宮下垂>子宮下垂</option>
+  <option value=中暑>中暑</option>
+  <option value=致成肺癰>致成肺癰</option>
+  <option value=治產後惡露已盡>治產後惡露已盡</option>
+  <option value=坐卧不能>坐卧不能</option>
+  <option value=肢冷>肢冷</option>
+  <option value=中風暴仆>中風暴仆</option>
+  <option value=躁擾狂越>躁擾狂越</option>
+  <option value=中脘痞滿>中脘痞滿</option>
+  <option value=植物神經功能紊亂>植物神經功能紊亂</option>
+  <option value=憎寒壯熱>憎寒壯熱</option>
+  <option value=憎寒>憎寒</option>
+  <option value=直疝>直疝</option>
+  <option value=自利不渴>自利不渴</option>
+  <option value=腫痛在腳>腫痛在腳</option>
+  <option value=左尺細沉>左尺細沉</option>
+  <option value=中暑濕>中暑濕</option>
+  <option value=足廢不用>足廢不用</option>
+
+  
+</select>
+<h1>舌診</h1>
+<label>舌尖</label>
+<input type="text" id="t_tipt" name="t_tipt" value=""><br>
+<select multiple='multiple' class='callbacks' name="t_tip">
+    <option value=red>赤</option>
+    <option value=burr>芒刺</option>
+</select>
+<!-- <label>舌根</label>
+<input type="text" id="t_roott" name="t_roott" value=""><br>
+<select multiple='multiple' class='callbacks' name="t_root"></select>
+</select> -->
+<label>舌邊</label>
+<input type="text" id="t_sidet" name="t_sidet" value=""><br>
+<select multiple='multiple' class='callbacks' name="t_side">
+    <option value=red>赤</option>
+    <option value=burr>芒刺</option>
+</select>
+<label>舌苔</label>
+<input type="text" id="t_furt" name="t_furt" value=""><br>
+<select multiple='multiple' class='callbacks' name="t_fur">
+    <option value=none>無苔</option>
+    <option value=thick>厚苔</option>
+    <option value=thin>薄苔</option>
+    <option value=crack>燥裂苔</option>
+</select>
+<label>舌色</label>
+<input type="text" id="t_colort" name="t_colort" value=""><br>
+<select multiple='multiple' class='callbacks' name="t_color">
+    <option value=red>紅</option>
+    <option value=yellow>黃</option>
+    <option value=black>黑</option>
+    <option value=white>白</option>
+    <option value=purple>紫</option>
+</select>
+<label>舌中</label>
+<input type="text" id="t_middlet" name="t_middlet" value=""><br>
+<select multiple='multiple' class='callbacks' name="t_middle">
+    <option value=yellow>黃</option>
+    <option value=black>黑</option>
+</select>
+<label>舌底</label>
+<input type="text" id="t_bottomt" name="t_bottomt" value=""><br>
+<select multiple='multiple' class='callbacks' name="t_bottom">
+    <option value=red>紅</option>
+    <option value=dry>嗌乾</option>
+</select>
+<label>舌濕度</label>
+<input type="text" id="t_moisturet" name="t_moisturet" value=""><br>
+<select multiple='multiple' class='callbacks' name="t_moisture">
+    <option value=moist>濕</option>
+    <option value=dry>乾</option>
+</select>
+
+
+
+<h1>整體</h1>
+<input type="text" id="wholet" name="wholet" value=""><br>
+
+  <select multiple='multiple' class='callbacks' name="whole">
+      
+      <option value=惡風>惡風</option>
+      <option value=惡寒>惡寒</option>
+      <option value=發熱>發熱</option>
+      <option value=瘧>瘧</option>
+      <option value=血虛>血虛</option>
+      <option value=氣虛>氣虛</option>
+      <option value=氣血兼虛>氣血兼虛</option>
+      <option value=喜熱湯>喜熱湯</option>
+      <option value=氣滯>氣滯</option>
+      <option value=血痛>血痛</option>
+      <option value=停飲>停飲</option>
+      <option value=暑閉>暑閉</option>
+      <option value=蟲嚙>蟲嚙</option>
+      <option value=氣冷>氣冷</option>
+      <option value=譫語>譫語</option>
+      <option value=赤濁>赤濁</option>
+      <option value=怠惰>怠惰</option>
+      <option value=煩躁>煩躁</option>
+      <option value=畏風>畏風</option>
+      <option value=傷暑風>傷暑風</option>
+      <option value=中時疫>中時疫</option>
+      <option value=虛勞>虛勞</option>
+      <option value=煩熱>煩熱</option>
+      <option value=惡風寒>惡風寒</option>
+      <option value=過午便熱>過午便熱</option>
+      <option value=寒熱往來>寒熱往來</option>
+      <option value=虛火>虛火</option>
+      <option value=厥逆>厥逆</option>
+      <option value=自汗>自汗</option>
+      <option value=疹>疹</option>
+      <option value=譫語狂亂>譫語狂亂</option>
+      <option value=轉失氣>轉失氣</option>
+      <option value=蜷臥>蜷臥</option>
+      <option value=憎寒>憎寒</option>
+      <option value=壯熱>壯熱</option>
+      <option value=血不足>血不足</option>
+      <option value=驚悸>驚悸</option>
+      <option value=健忘>健忘</option>
+      <option value=虛痛>虛痛</option>
+      <option value=骨蒸>骨蒸</option>
+      <option value=怔忡>怔忡</option>
+      <option value=身痛>身痛</option>
+      <option value=厥脫>厥脫</option>
+      <option value=氣閉>氣閉</option>
+      <option value=痰閉>痰閉</option>
+      <option value=暑閉>暑閉</option>
+      <option value=自汗食少>自汗食少</option>
+      <option value=日晡發熱>日晡發熱（三至五时左右发热）</option>
+      <option value=水閉發喘>水閉發喘</option>
+      <option value=風閉>風閉</option>
+      <option value=為火閉>為火閉</option>
+      <option value=盜汗>盜汗</option>
+      <option value=夜熱>夜熱</option>
+      <option value=蜷臥厥冷>蜷臥厥冷</option>
+      <option value=譫語>譫語</option>
+      <option value=疹>疹</option>
+      <option value=發狂>發狂</option>
+      <option value=水腫>水腫</option>
+      <option value=髒毒>髒毒</option>
+      <option value=惡寒無汗>惡寒無汗</option>
+      <option value=譫語>譫語</option>
+      <option value=食少納呆>食少納呆</option>
+      <option value=倦怠無力>倦怠無力</option>
+      
+  </select>
+<!-- 
+<h1>脈象</h1>
+  <input type="text" id="pulse" name="pulse" value=""><br>
+  
+    <select multiple='multiple' class='callbacks' name="pulse">
+  </select> -->
+
+<!-- <h1>舌象</h1>
+  <input type="text" id="tongue_t" name="tongue_t" value=""><br>
+  
+    <select multiple='multiple' class='callbacks' name="tongue_">
+        <option value=苔白厚>苔白厚</option>
+        <option value=舌絳>舌絳</option>
+        <option value=舌黑>舌黑</option>
+        <option value=舌潤>舌潤</option>
+        <option value=舌尖赤>舌尖赤</option>
+        <option value=重舌>重舌</option>
+        <option value=木舌>木舌</option>
+        <option value=無液>無液</option>
+        <option value=舌苔薄黃>舌苔薄黃</option>
+  </select> -->
+
+<h1>頭部</h1>
+<input type="text" id="headt" name="headt" value=""><br>
+
+  <select multiple='multiple' class='callbacks' name="head">
+      <option value='頭痛'>頭痛</option>
+      <option value='頭眩'>頭眩</option>
+      <option value='頭汗'>頭汗</option>
+      <option value='眩暈'>眩暈</option>
+      <option value='面黃'>面黃</option>
+      <option value='發腫'>發腫</option>
+      <option value='面浮腫'>面浮腫</option>
+      <option value='眩暈'>眩暈</option>
+      <option value='面色痿白'>面色痿白</option>
+      <option value='面色蒼白'>面色蒼白</option>
+      <option value='面痛'>面痛</option>
+      <option value='黃胖面腫'>黃胖面腫</option>
+      <option value='戴陽'>戴陽</option>
+  </select>
+
+<h1>眼部</h1>
+  <input type="text" id="eyet" name="eyet" value=""><br>
+  
+    <select multiple='multiple' class='callbacks' name="eye">
+        <option value=目干>目干</option>
+        <option value=目不明>目不明</option>
+        <option value=目赤>目赤</option>
+        <option value=目痛>目痛</option>
+        <option value=目眩>目眩</option>
+        <option value=眉棱骨眼眶痛>眉棱骨眼眶痛</option>
+        <option value=目赤腫痛>目赤腫痛</option>
+        <option value=目胞腫痛>目胞腫痛</option>
+        <option value=目視無光>目視無光</option>
+    </select>
+
+<h1>耳鼻喉</h1>
+<input type="text" id="entt" name="entt" value=""><br>
+
+  <select multiple='multiple' class='callbacks' name="ent">
+      <option value=鼻鳴>鼻鳴</option>
+      <option value=乾嘔>乾嘔</option>
+      <option value=鼻塞>鼻塞</option>
+      <option value=流清涕>流清涕</option>
+      <option value=濃痰>濃痰</option>
+      <option value=咳嗽咽乾>咳嗽咽乾</option>
+      <option value=咳嗽聲不出>咳嗽聲不出</option>
+      <option value=咳嗽>咳嗽</option>
+      <option value=咽乾>咽乾</option>
+      <option value=利清穀>利清穀</option>
+      <option value=痰迷>痰迷</option>
+      <option value=瘰癧>瘰癧</option>
+      <option value=聤耳>聤耳</option>
+      <option value=痰飲>痰飲</option>
+      <option value=痰>痰</option>
+      <option value=噴嚏>噴嚏</option>
+      <option value=喉疼>喉疼</option>
+      <option value=鼻燥>鼻燥</option>
+      <option value=鼻衄>鼻衄</option>
+      <option value=失氣>失氣</option>
+      <option value=咽痛>咽痛</option>
+      <option value=吐血>吐血</option>
+      <option value=氣急>氣急</option>
+      <option value=咯血>咯血</option>
+      <option value=耳鳴>耳鳴</option>
+      <option value=耳聾>耳聾</option>
+  </select>
+
+
+<h1>口腔</h1>
+<input type="text" id="moutht" name="moutht" value=""><br>
+
+  <select multiple='multiple' class='callbacks' name="mouth">
+      <option value='口苦'>口苦</option>
+      <option value='口燥'>口燥</option>
+      <option value='舌卷'>舌卷</option>
+      <option value='口渴'>口渴</option>
+      <option value='燥渴'>燥渴</option>
+      <option value='吐清沫'>吐清沫</option>
+      <option value='吐蛔'>吐蛔</option>
+      <option value='口吐黃涎'>口吐黃涎</option>
+      <option value='煩渴'>煩渴</option>
+      <option value='嘔吐'>嘔吐</option>
+      <option value='呃逆'>呃逆</option>
+      <option value='舌捲'>舌捲</option>
+      <option value='嗽水不欲咽'>嗽水不欲咽</option>
+      <option value='吐血'>吐血</option>
+      <option value='口苦'>口苦</option>
+      <option value='消渴'>消渴</option>
+      <option value='唇舌白'>唇舌白</option>
+      <option value='嘔吐'>嘔吐</option>
+      <option value='唇赤'>唇赤</option>
+      <option value='熱吐'>熱吐</option>
+      <option value='唇白'>唇白</option>
+      <option value='唇焦'>唇焦</option>
+      <option value='口臭'>口臭</option>
+      <option value='齒痛'>齒痛</option>
+      <option value='流涎'>流涎</option>
+      <option value='呃逆'>呃逆</option>
+      <option value='耳聾'>耳聾</option>
+      <option value='舌黑燥渴'>舌黑燥渴</option>
+      <option value='舌苔滑'>舌苔滑</option>
+      <option value='燥渴'>燥渴</option>
+      <option value='唇舌紅'>唇舌紅</option>
+  </select>
+
+  
+  <h1>颈部</h1>
+  <input type="text" id="neckt" name="neckt" value=""><br>
+  
+    <select multiple='multiple' class='callbacks' name="neck">
+        <option value=頸腫>頸腫</option>
+        <option value=發頤>發頤</option>
+        <option value=項脊強>項脊強</option>
+    </select>
+
+
+
+  <h1>背部</h1>
+  <input type="text" id="backt" name="backt" value=""><br>
+  
+    <select multiple='multiple' class='callbacks' name="back">
+        <option value=項脊強>項脊強</option>
+        <option value=天柱骨倒>天柱骨倒</option>
+    </select>
+
+
+
+  
+<h1>胸部</h1>
+<input type="text" id="chestt" name="chestt" value=""><br>
+
+  <select multiple='multiple' class='callbacks' name="chest">
+      <option value=喘>喘</option>
+      <option value=胸滿>胸滿</option>
+      <option value=胸膈>胸膈</option>
+      <option value=滿悶>滿悶</option>
+      <option value=心悸>心悸</option>
+      <option value=氣上衝心>氣上衝心</option>
+      <option value=氣積>氣積</option>
+      <option value=肺痿>肺痿</option>
+      <option value=肺癰>肺癰</option>
+      <option value=龜胸>龜胸</option>
+      <option value=按胸則痛>按胸則痛</option>
+      <option value=結胸>結胸</option>
+      <option value=痞氣.胸脹悶>痞氣.胸脹悶</option>
+      <option value=胸脹痛>胸脹痛</option>
+      <option value=嘔膿>嘔膿</option>
+      <option value=胸痛>胸痛</option>
+      <option value=喘嗽>喘嗽</option>
+      <option value=太息>太息</option>
+      <option value=失氣>失氣</option>
+  </select>
+
+  
+<h1>腹部</h1>
+<input type="text" id="stomacht" name="stomacht" value=""><br>
+
+<select multiple='multiple' class='callbacks' name="stomach">
+    <option value=脅痛>脅痛</option>
+    <option value=左脅痛>左脅痛</option>
+    <option value=腹滿痛>腹滿痛</option>
+    <option value=下利>下利</option>
+    <option value=痛利清水>痛利清水</option>
+    <option value=腹痛>腹痛</option>
+    <option value=小腹痛>小腹痛</option>
+    <option value=囊縮>囊縮</option>
+    <option value=遺精>遺精</option>
+    <option value=積聚>積聚</option>
+    <option value=疝氣>疝氣</option>
+    <option value=小腹滿>小腹滿</option>
+    <option value=腹冷痛>腹冷痛</option>
+    <option value=腰以上腫>腰以上腫</option>
+    <option value=腰以下腫>腰以下腫</option>
+    <option value=先喘而後腫>先喘而後腫</option>
+    <option value=疝瘕>疝瘕</option>
+    <option value=偏墜>偏墜</option>
+    <option value=鼓脹>鼓脹</option>
+    <option value=積滯不消>積滯不消</option>
+    <option value=食積>食積</option>
+    <option value=痞積>痞積</option>
+    <option value=蟲積>蟲積</option>
+    <option value=蠱脹>蠱脹</option>
+    <option value=不能食>不能食</option>
+    <option value=黃膽>黃膽</option>
+    <option value=濕腫>濕腫</option>
+    <option value=酒疸>酒疸</option>
+    <option value=酒積>酒積</option>
+    <option value=陽黃膽>陽黃膽</option>
+    <option value=右脅痛>右脅痛</option>
+    <option value=肺癰>肺癰</option>
+    <option value=不欲食>不欲食</option>
+    <option value=停滯>停滯</option>
+    <option value=濕腫>濕腫</option>
+    <option value=霍亂>霍亂</option>
+    <option value=嘈雜>嘈雜</option>
+    <option value=胃脘痛>胃脘痛</option>
+    <option value=奔豚>奔豚</option>
+    <option value=噎膈>噎膈</option>
+    <option value=吞酸噯腐>吞酸噯腐</option>
+    <option value=胃脘痛>胃脘痛</option>
+</select>
+
+    
+<h1>下肢</h1>
+<input type="text" id="lowerpartt" name="lowerpartt" value=""><br>
+
+<select multiple='multiple' class='callbacks' name="lowerpart">
+    <option value=腰痛>腰痛</option>
+    <option value=腿酸足軟>腿酸足軟</option>
+    <option value=腿腫脹痛>腿腫脹痛</option>
+    <option value=腫痛在腳>腫痛在腳</option>
+    <option value=三消>三消</option>
+    <option value=嘈雜>嘈雜</option>
+    <option value=命門火衰>命門火衰</option>
+    <option value=膀胱氣>膀胱氣</option>
+    <option value=精滑>精滑</option>
+    <option value=脫肛>脫肛</option>
+    <option value=腸癰>腸癰</option>
+    <option value=腸風>腸風</option>
+    <option value=小腸氣>小腸氣</option>
+    <option value=交腸>交腸</option>
+</select>
+
+    
+<h1>四肢</h1>
+<input type="text" id="limbst" name="limbst" value=""><br>
+
+<select multiple='multiple' class='callbacks' name="limbs">
+    <option value=肢冷>肢冷</option>
+    <option value=足不任地>足不任地</option>
+    <option value=筋痿拘攣>筋痿拘攣</option>
+    <option value=肢軟>肢軟</option>
+    <option value=四肢拘急>四肢拘急</option>
+    <option value=肌瘦>肌瘦</option>
+</select>
+
+<h1>大小便</h1>
+<input type="text" id="excrut" name="excrut" value=""><br>
+
+<select multiple='multiple' class='callbacks' name="excru">
+    <option value=溺赤>溺赤</option>
+    <option value=便閉>便閉</option>
+    <option value=便血>便血</option>
+    <option value=小便不利>小便不利</option>
+    <option value=小便不通>小便不通</option>
+    <option value=溺赤短>溺赤短</option>
+    <option value=尿血>尿血</option>
+    <option value=膏淋>膏淋</option>
+    <option value=石淋>石淋</option>
+    <option value=便膿血>便膿血</option>
+    <option value=泄瀉>泄瀉</option>
+    <option value=勞淋>勞淋</option>
+    <option value=老淋>老淋</option>
+    <option value=冷淋>冷淋</option>
+    <option value=小便不禁>小便不禁</option>
+    <option value=小便出血>小便出血</option>
+    <option value=便閉>便閉</option>
+    <option value=久痢>久痢</option>
+    <option value=脫肛>脫肛</option>
+    <option value=腸血>腸血</option>
+    <option value=白痢>白痢</option>
+    <option value=洞洩>洞洩</option>
+    <option value=瀉渤>瀉渤</option>
+    <option value=赤痢>赤痢</option>
+    <option value=大便秘>大便秘</option>
+    <option value=久痢>久痢</option>
+    <option value=溺澀>溺澀</option>
+    <option value=溺短>溺短</option>
+    <option value=大便結>大便結</option>
+    <option value=久痢久瘧>久痢久瘧</option>
+    <option value=雞鳴泄瀉>雞鳴泄瀉</option>
+    <option value=氣淋>氣淋</option>
+    <option value=血淋>血淋</option>
+    <option value=關格>關格</option>
+</select>
+
+<h1>睡眠</h1>
+<input type="text" id="sleept" name="sleept" value=""><br>
+
+<select multiple='multiple' class='callbacks' name="sleep">
+    <option value=不得眠>不得眠</option>
+    <option value=不得臥>不得臥</option>
+</select>
+  <!-- ends -->
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.4.0/jquery.quicksearch.min.js"></script>
+  
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+  <script src="{% static 'CMdiagnose/multi-select/js/jquery.multi-select.js' %}"></script>
+  <script type="text/javascript">
+  // run pre selected options
+
+  $(".callbacks[name=t_tip]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("t_tipt").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=t_root]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("t_roott").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=t_side]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("t_sidet").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=t_fur]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("t_furt").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=t_color]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("t_colort").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=t_middle]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("t_middlet").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=t_bottom]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("t_bottomt").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=t_moisture]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("t_moisturet").value += values + "," ;
+  }
+});
+
+  $(".callbacks[name=whole]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("wholet").value += values + "," ;
+    }
+  });
+
+  $(".callbacks[name=head]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("headt").value += values + "," ;
+    }
+  });
+
+  $(".callbacks[name=eye]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("eyet").value += values + "," ;
+    }
+  });
+
+//   $(".callbacks[name=tongue_]").multiSelect({
+//   afterSelect: function(values){
+//     alert("Select value: "+values);
+//     document.getElementById("tongue_t").value += values + "," ;
+//   }
+// });
+
+  $(".callbacks[name=mouth]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("moutht").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=ent]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("entt").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=back]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("backt").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=neck]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("neckt").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=chest]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("chestt").value += values + "," ;
+  }
+});
+
+
+$(".callbacks[name=stomach]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("stomacht").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=lowerpart]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("lowerpartt").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=limbs]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("limbst").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=excru]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("excrut").value += values + "," ;
+  }
+});
+
+$(".callbacks[name=sleep]").multiSelect({
+  afterSelect: function(values){
+    alert("Select value: "+values);
+    document.getElementById("sleept").value += values + "," ;
+  }
+});
+
+$('.searchable[name=general]').multiSelect({
+  selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='嘗試輸入 \"熱\"'>",
+  selectionHeader: "<input type='text' class='search-input' autocomplete='off'>",
+  afterInit: function(ms){
+    var that = this,
+        $selectableSearch = that.$selectableUl.prev(),
+        $selectionSearch = that.$selectionUl.prev(),
+        selectableSearchString = '#'+that.$container.attr('id')+' .ms-elem-selectable:not(.ms-selected)',
+        selectionSearchString = '#'+that.$container.attr('id')+' .ms-elem-selection.ms-selected';
+
+    that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+    .on('keydown', function(e){
+      if (e.which === 40){
+        that.$selectableUl.focus();
+        return false;
+      }
+    });
+
+    that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+    .on('keydown', function(e){
+      if (e.which == 40){
+        that.$selectionUl.focus();
+        return false;
+      }
+    });
+  },
+  afterSelect: function(values){
+    this.qs1.cache();
+    this.qs2.cache();
+    alert("Select value: "+values);
+    document.getElementById("generalt").value += values + "," ;
+  },
+
+  afterDeselect: function(){
+    this.qs1.cache();
+    this.qs2.cache();
+    
+    
+  }
+  
+});
+  </script>
+<input type="submit" value="get result">
+</form>
+
+

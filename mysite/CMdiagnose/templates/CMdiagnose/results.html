@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/style3.css' %}">
+<body oncopy="return false" oncut="return false" onpaste="return false" ondragstart="return false" onmouseover="return false">
+<h1>症狀：</h1>
+
+<p>{{ person.body.general |linebreaks}}</p>
+
+<h1>診斷結果：</h1>
+<div style="user-select:none">
+<p>{% autoescape off %}{{ person.body.result |linebreaks}}{% endautoescape %}</p>
+</div>
+</body>

@@ -1,0 +1,22 @@
+mg { 
+    background-color: #169dd3;
+    color: black;
+}
+
+mr { 
+    background-color: red;
+    color: black;
+}
+
+x{
+      text-decoration: line-through;
+}
+
+u{
+      text-decoration: underl;
+}
+
+p span 
+{
+    display: block;
+}

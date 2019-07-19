@@ -1,0 +1,193 @@
+﻿print(counter)0.5
+.match found in 12
+1
+風'
+'',
+'',
+喘
+match found in 12-tai
+normal可能性 50.0 %
+
+整體：惡風，惡寒，發熱，瘧，血虛，氣虛，氣血兼虛，喜熱湯，氣滯。血痛。停飲。暑閉。蟲嚙。氣冷。譫語。赤濁。煩躁。畏風。傷暑風。中時疫。虛勞
+惡風寒，過午便熱，寒熱往來,虛火，厥逆,自汗，疹。譫語狂亂,轉失氣,蜷臥，憎寒,壯熱，血不足,驚悸,健忘,虛痛,怔忡。身痛。厥脫。氣閉。痰閉。暑閉。水閉發喘。風閉。為火閉。盜汗。夜熱。蜷臥厥冷。譫語。疹。發狂。水腫。髒毒。惡寒無汗。譫語
+
+脈象：浮，弦，沉,細,弱。洪。空。大。遲。實。軟
+舌象：苔白厚，舌絳,舌黑,舌潤。舌尖赤。重舌。木舌。無液。舌苔薄黃
+頭部：頭痛，頭眩。頭汗。眩暈。面黃。發腫。面浮腫。眩暈。面色痿白。面痛。黃胖面腫。戴陽
+眼部：目干，目不明。目赤。目痛。目眩。眉棱骨眼眶痛。目赤腫痛。目胞腫痛。目視無光
+耳鼻喉：鼻鳴，乾嘔，鼻塞,流清涕,濃痰，咳嗽，咽乾,利清穀，痰迷，瘰癧。聤耳。痰飲。痰。噴嚏。喉疼。鼻燥。鼻衄。失氣。咽痛。吐血。氣急。咯血。耳鳴。耳聾
+口部：口苦,口燥,舌卷，口渴,燥渴,吐清沫,吐蛔,口吐黃涎,煩渴。嘔吐。呃逆。舌捲。嗽水不欲咽。吐血。口苦。消渴。唇舌白。嘔吐。唇赤。熱吐。唇白。唇焦。口臭。齒痛。流涎。呃逆。耳聾。舌黑燥渴。舌苔滑。燥渴。唇舌紅
+頸：頸腫,發頤
+背部：項脊強。天柱骨倒。
+胸部：胸滿,胸膈,滿悶,心悸。氣上衝心。氣積。肺痿。肺癰。龜胸。按胸則痛。結胸。痞氣.胸脹悶。胸脹痛。嘔膿。胸痛。喘嗽。太息。失氣。
+腹部：脅痛，左脅痛，腹滿痛,下利，痛利清水。腹痛。小腹痛,囊縮。遺精。積聚。疝氣，小腹滿，腹冷痛，腰以上腫，腰以下腫,先喘而後腫。疝瘕。偏墜。鼓脹。積滯不消。食積。痞積。蟲積。蠱脹。不能食。黃膽。濕腫。酒疸。酒積，陽黃膽。右脅痛。肺癰。不欲食。停滯。濕腫。霍亂。嘈雜。胃脘痛。奔豚。噎膈。吞酸噯腐。胃脘痛。
+下半身：腰痛。腿酸足軟。腿腫脹痛,腫痛在腳。三消。嘈雜。命門火衰。膀胱氣。精滑。脫肛。腸癰。腸風。小腸氣。交腸。
+四肢：肢冷,足不任地,筋痿拘攣。肢軟。四肢拘急。肌瘦
+大小便：溺赤,便閉。便血。小便不利。小便不通。溺赤短。尿血。膏淋。石淋。便膿血。泄瀉。勞淋。老淋。冷淋。小便不禁。小便出血。便閉。久痢。脫肛。腸血。白痢。洞洩。瀉渤。赤痢。大便秘。久痢。溺澀。溺短。大便結。久痢久瘧。雞鳴泄瀉。氣淋。血淋。關格（關格者，大小便不通也。）。
+睡眠：不得眠,不得臥
+
+
+
+
+
+
+
+
+
+小兒。積乳食。痰。痰積。
+小兒。終日發熱。拘束肢冷。清涕咳嗽。頭痛鼻塞。
+小兒。夜熱潮熱。晝輕夜重。或口渴。或腹脹。或盜汗。傷食。停痞。伏燥。伏火。陰虛。陽虛。
+
+
+		print('true')
+
+		
+>>> for element in a:
+	if element in b:
+		print(element)
+		print(b)
+		print('true')
+
+		
+>>> for element in a:
+	print(element)
+	if element in b:
+		print(element)
+		print(b)
+		print('true')
+
+		
+左寸弦大
+心實
+氣滯
+血痛
+停飲
+痰迷
+暑閉
+蟲嚙
+>>> pwd
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    pwd
+NameError: name 'pwd' is not defined
+>>> from django.test import TestCase
+>>> from CMdiagnose import Cases
+Traceback (most recent call last):
+  File "<pyshell#23>", line 1, in <module>
+    from CMdiagnose import Cases
+ModuleNotFoundError: No module named 'CMdiagnose'
+>>> whole="惡風，惡寒，發熱，瘧，血虛，氣虛，氣血兼虛，喜熱湯，氣滯。血痛。停飲。暑閉。蟲嚙。氣冷。譫語。赤濁。煩躁。畏風。傷暑風。中時疫。虛勞,
+惡風寒，過午便熱，寒熱往來,虛火，厥逆,自汗，疹。譫語狂亂,轉失氣,蜷臥，憎寒,壯熱，血不足,驚悸,健忘,虛痛,怔忡。身痛。厥脫。氣閉。痰閉。暑閉。水閉發喘。風閉。為火閉。盜汗。夜熱。蜷臥厥冷。譫語。疹。發狂。水腫。髒毒。惡寒無汗。譫語"
+SyntaxError: EOL while scanning string literal
+>>> whole="惡風，惡寒，發熱，瘧，血虛，氣虛，氣血兼虛，喜熱湯，氣滯。血痛。停飲。暑閉。蟲嚙。氣冷。譫語。赤濁。煩躁。畏風。傷暑風。中時疫。虛勞,惡風寒，過午便熱，寒熱往來,虛火，厥逆,自汗，疹。譫語狂亂,轉失氣,蜷臥，憎寒,壯熱，血不足,驚悸,健忘,虛痛,怔忡。身痛。厥脫。氣閉。痰閉。暑閉。水閉發喘。風閉。為火閉。盜汗。夜熱。蜷臥厥冷。譫語。疹。發狂。水腫。髒毒。惡寒無汗。譫語"
+>>> whole
+'惡風，惡寒，發熱，瘧，血虛，氣虛，氣血兼虛，喜熱湯，氣滯。血痛。停飲。暑閉。蟲嚙。氣冷。譫語。赤濁。煩躁。畏風。傷暑風。中時疫。虛勞,惡風寒，過午便熱，寒熱往來,虛火，厥逆,自汗，疹。譫語狂亂,轉失氣,蜷臥，憎寒,壯熱，血不足,驚悸,健忘,虛痛,怔忡。身痛。厥脫。氣閉。痰閉。暑閉。水閉發喘。風閉。為火閉。盜汗。夜熱。蜷臥厥冷。譫語。疹。發狂。水腫。髒毒。惡寒無汗。譫語'
+>>> wholelist=whole.replace('，',',').replace('。',',').split(',')
+>>> wholelist
+['惡風', '惡寒', '發熱', '瘧', '血虛', '氣虛', '氣血兼虛', '喜熱湯', '氣滯', '血痛', '停飲', '暑閉', '蟲嚙', '氣冷', '譫語', '赤濁', '煩躁', '畏風', '傷暑風', '中時疫', '虛勞', '惡風寒', '過午便熱', '寒熱往來', '虛火', '厥逆', '自汗', '疹', '譫語狂亂', '轉失氣', '蜷臥', '憎寒', '壯熱', '血不足', '驚悸', '健忘', '虛痛', '怔忡', '身痛', '厥脫', '氣閉', '痰閉', '暑閉', '水閉發喘', '風閉', '為火閉', '盜汗', '夜熱', '蜷臥厥冷', '譫語', '疹', '發狂', '水腫', '髒毒', '惡寒無汗', '譫語']
+>>> pulse="浮，弦，沉,細,弱。洪。空。大。遲。實。軟"
+>>> pulselist=whole.replace('，',',').replace('。',',').split(',')
+>>> pulselist
+['惡風', '惡寒', '發熱', '瘧', '血虛', '氣虛', '氣血兼虛', '喜熱湯', '氣滯', '血痛', '停飲', '暑閉', '蟲嚙', '氣冷', '譫語', '赤濁', '煩躁', '畏風', '傷暑風', '中時疫', '虛勞', '惡風寒', '過午便熱', '寒熱往來', '虛火', '厥逆', '自汗', '疹', '譫語狂亂', '轉失氣', '蜷臥', '憎寒', '壯熱', '血不足', '驚悸', '健忘', '虛痛', '怔忡', '身痛', '厥脫', '氣閉', '痰閉', '暑閉', '水閉發喘', '風閉', '為火閉', '盜汗', '夜熱', '蜷臥厥冷', '譫語', '疹', '發狂', '水腫', '髒毒', '惡寒無汗', '譫語']
+>>> pulselist=pulse.replace('，',',').replace('。',',').split(',')
+>>> pulselist
+['浮', '弦', '沉', '細', '弱', '洪', '空', '大', '遲', '實', '軟']
+>>> tongue="苔白厚，舌絳,舌黑,舌潤。舌尖赤。重舌。木舌。無液。舌苔薄黃"
+>>> tonguelist=tongue.replace('，',',').replace('。',',').split(',')
+>>> head="頭痛，頭眩。頭汗。眩暈。面黃。發腫。面浮腫。眩暈。面色痿白。面痛。黃胖面腫。戴陽"
+>>> headlist=head.replace('，',',').replace('。',',').split(',')
+>>> headlist
+['頭痛', '頭眩', '頭汗', '眩暈', '面黃', '發腫', '面浮腫', '眩暈', '面色痿白', '面痛', '黃胖面腫', '戴陽']
+>>> eye="目干，目不明。目赤。目痛。目眩。眉棱骨眼眶痛。目赤腫痛。目胞腫痛。目視無光"
+>>> eyelist=eye.replace('，',',').replace('。',',').split(',')
+>>> ent="鼻鳴，乾嘔，鼻塞,流清涕,濃痰，咳嗽，咽乾,利清穀，痰迷，瘰癧。聤耳。痰飲。痰。噴嚏。喉疼。鼻燥。鼻衄。失氣。咽痛。吐血。氣急。咯血。耳鳴。耳聾"
+>>> entlist=ent.replace('，',',').replace('。',',').split(',')
+>>> entlist
+['鼻鳴', '乾嘔', '鼻塞', '流清涕', '濃痰', '咳嗽', '咽乾', '利清穀', '痰迷', '瘰癧', '聤耳', '痰飲', '痰', '噴嚏', '喉疼', '鼻燥', '鼻衄', '失氣', '咽痛', '吐血', '氣急', '咯血', '耳鳴', '耳聾']
+>>> mouth="口苦,口燥,舌卷，口渴,燥渴,吐清沫,吐蛔,口吐黃涎,煩渴。嘔吐。呃逆。舌捲。嗽水不欲咽。吐血。口苦。消渴。唇舌白。嘔吐。唇赤。熱吐。唇白。唇焦。口臭。齒痛。流涎。呃逆。耳聾。舌黑燥渴。舌苔滑。燥渴。唇舌紅"
+>>> mouthlist=mouth.replace('，',',').replace('。',',').split(',')
+>>> mouthlist
+['口苦', '口燥', '舌卷', '口渴', '燥渴', '吐清沫', '吐蛔', '口吐黃涎', '煩渴', '嘔吐', '呃逆', '舌捲', '嗽水不欲咽', '吐血', '口苦', '消渴', '唇舌白', '嘔吐', '唇赤', '熱吐', '唇白', '唇焦', '口臭', '齒痛', '流涎', '呃逆', '耳聾', '舌黑燥渴', '舌苔滑', '燥渴', '唇舌紅']
+>>> neck="頸腫,發頤"
+>>> necklist=neck.replace('，',',').replace('。',',').split(',')
+>>> back="項脊強。天柱骨倒"
+>>> backlist=back..replace('，',',').replace('。',',').split(',')
+SyntaxError: invalid syntax
+>>> backlist=back.replace('，',',').replace('。',',').split(',')
+>>> chest="胸滿,胸膈,滿悶,心悸。氣上衝心。氣積。肺痿。肺癰。龜胸。按胸則痛。結胸。痞氣.胸脹悶。胸脹痛。嘔膿。胸痛。喘嗽。太息。失氣。"
+>>> chestlist=chest.replace('，',',').replace('。',',').split(',')
+>>> stomach="脅痛，左脅痛，腹滿痛,下利，痛利清水。腹痛。小腹痛,囊縮。遺精。積聚。疝氣，小腹滿，腹冷痛，腰以上腫，腰以下腫,先喘而後腫。疝瘕。偏墜。鼓脹。積滯不消。食積。痞積。蟲積。蠱脹。不能食。黃膽。濕腫。酒疸。酒積，陽黃膽。右脅痛。肺癰。不欲食。停滯。濕腫。霍亂。嘈雜。胃脘痛。奔豚。噎膈。吞酸噯腐。胃脘痛。"
+>>> stomachlist=stomach.replace('，',',').replace('。',',').split(',')
+>>> lowerpart="腰痛。腿酸足軟。腿腫脹痛,腫痛在腳。三消。嘈雜。命門火衰。膀胱氣。精滑。脫肛。腸癰。腸風。小腸氣。交腸。"
+>>> lowerpartlist=lowerpart.replace('，',',').replace('。',',').split(',')
+>>> limbs="肢冷,足不任地,筋痿拘攣。肢軟。四肢拘急。肌瘦"
+>>> limbslist=limbs.replace('，',',').replace('。',',').split(',')
+>>> excru="溺赤,便閉。便血。小便不利。小便不通。溺赤短。尿血。膏淋。石淋。便膿血。泄瀉。勞淋。老淋。冷淋。小便不禁。小便出血。便閉。久痢。脫肛。腸血。白痢。洞洩。瀉渤。赤痢。大便秘。久痢。溺澀。溺短。大便結。久痢久瘧。雞鳴泄瀉。氣淋。血淋。關格"
+>>> excrulist=excru.replace('，',',').replace('。',',').split(',')
+>>> sleep="不得眠,不得臥"
+>>> sleeplist=sleep.replace('，',',').replace('。',',').split(',')
+>>> print ("<option value= </option>")
+<option value= </option>
+>>> for element in sleeplist:
+	print("<option value=" +element+">"+element+"</option>")
+
+	
+<option value=不得眠>不得眠</option>
+<option value=不得臥>不得臥</option>
+>>> for element in sleeplist:
+	print("<option value=" +"'"+element+"'"+">"+element+"</option>")
+
+	
+<option value='不得眠'>不得眠</option>
+<option value='不得臥'>不得臥</option>
+>>> for element in mouthlist:
+	print("<option value=" +"'"+element+"'"+">"+element+"</option>")
+
+	
+<option value='口苦'>口苦</option>
+<option value='口燥'>口燥</option>
+<option value='舌卷'>舌卷</option>
+<option value='口渴'>口渴</option>
+<option value='燥渴'>燥渴</option>
+<option value='吐清沫'>吐清沫</option>
+<option value='吐蛔'>吐蛔</option>
+<option value='口吐黃涎'>口吐黃涎</option>
+<option value='煩渴'>煩渴</option>
+<option value='嘔吐'>嘔吐</option>
+<option value='呃逆'>呃逆</option>
+<option value='舌捲'>舌捲</option>
+<option value='嗽水不欲咽'>嗽水不欲咽</option>
+<option value='吐血'>吐血</option>
+<option value='口苦'>口苦</option>
+<option value='消渴'>消渴</option>
+<option value='唇舌白'>唇舌白</option>
+<option value='嘔吐'>嘔吐</option>
+<option value='唇赤'>唇赤</option>
+<option value='熱吐'>熱吐</option>
+<option value='唇白'>唇白</option>
+<option value='唇焦'>唇焦</option>
+<option value='口臭'>口臭</option>
+<option value='齒痛'>齒痛</option>
+<option value='流涎'>流涎</option>
+<option value='呃逆'>呃逆</option>
+<option value='耳聾'>耳聾</option>
+<option value='舌黑燥渴'>舌黑燥渴</option>
+<option value='舌苔滑'>舌苔滑</option>
+<option value='燥渴'>燥渴</option>
+<option value='唇舌紅'>唇舌紅</option>
+>>> for element in headlist:
+	print("<option value=" +"'"+element+"'"+">"+element+"</option>")
+
+	
+<option value='頭痛'>頭痛</option>
+<option value='頭眩'>頭眩</option>
+<option value='頭汗'>頭汗</option>
+<option value='眩暈'>眩暈</option>
+<option value='面黃'>面黃</option>
+<option value='發腫'>發腫</option>
+<option value='面浮腫'>面浮腫</option>
+<option value='眩暈'>眩暈</option>
+<option value='面色痿白'>面色痿白</option>
+<option value='面痛'>面痛</option>
+<option value='黃胖面腫'>黃胖面腫</option>
+<option value='戴陽'>戴陽</option>
