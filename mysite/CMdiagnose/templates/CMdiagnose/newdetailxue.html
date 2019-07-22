@@ -10,20 +10,46 @@
 
 
   <link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/multi-select/css/multi-select.css' %}">
+  <style>
 
+      .RNNXgb {
+        background: #fff;
+        display: flex;
+        border-radius: 8px;
+        border: 1px solid #dfe1e5;
+        box-shadow: none;
+        border-radius: 24px;
+        z-index: 3;
+        height: 44px;
+        margin: 0 auto;
+        width: 582px;
+      }
+    </style>
 
   <p>本資料庫的內容來源繁雜，不及備載，僅供學術參考，不作商業用途，其著作權各歸其原作者或其出版社所有。若有真實疾患請尋求合法醫師，非中醫師請勿擅自處方服藥。</p>
   <br>
-  <div>
-      簡繁轉化
-      <a id="translateLink" style="margin-top:-6px;" class="btn btn-success pull-left" href="javascript:translatePage();">简体</a>
-  </div>
+
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <form action="{% url 'CMdiagnose:newx' %}" method="post" id="my_form">
   {% csrf_token %}
-  <label>搜索穴位主治症狀</label>
-  <input type="text" id="generex" name="generex" value=""><br>
+  <div class="RNNXgb" align="center">
+      <!-- <label>General Symptoms</label> -->
+      <input type="text" id="generex" name="generex" size="70" placeholder='請輸入症狀名稱，穴位名稱，或所包含的漢字（簡繁體皆可，系統自帶簡轉繁功能）'>
+      &nbsp;
+      <button class="btn btn-primary" type="submit" value="載入">載入</button><br>
+    </div>
+  </br></br>
+
+  <div align="center" clsee="container3">
+  
+  
+      <div align="center">
+          <p>以下為症狀輔助查找系統，若您不熟悉症狀名稱，可任意打入一個漢字，與該字相關的症狀名稱將會在選項框中出現。</p>
+          <p>當症狀名稱被選定後，關閉彈出的確認窗口，您選定的症狀名稱將出現在搜索欄。選項默認為繁體，可按鈕轉換為簡體。</p>
+          簡繁轉化
+          <a  id="translateLink" class="btn btn-success" href="javascript:translatePage();">简体</a>
+      </div>
 <select multiple='multiple' class='searchable' name="general">
   <option value=惡風寒>惡風寒</option>
   <option value=胸脅腫痛>胸脅腫痛</option>
@@ -3587,17 +3613,15 @@ $('.searchable[name=general]').multiSelect({
   $('#my_form').submit(function(event) {
   event.preventDefault(); //this will prevent the default submit
 
-  document.getElementById("generext").value=Traditionalized(document.getElementById("generext").value);
-  if (document.getElementById("generext").value.substr(-1)==','){
-    document.getElementById("generext").value=document.getElementById("generext").value.slice(0, -1);
+  document.getElementById("generex").value=Traditionalized(document.getElementById("generex").value);
+  if (document.getElementById("generex").value.substr(-1)==','){
+    document.getElementById("generex").value=document.getElementById("generex").value.slice(0, -1);
   }
   // your code here
   $(this).unbind('submit').submit(); // continue the submit unbind preventDefault
 })
 );
   </script>
-  </br></br></br>
-<input type="submit" value="載入">
 </form>
 <!-- 
 <form action="{% url 'CMdiagnose:newyext' %}" method="post">
