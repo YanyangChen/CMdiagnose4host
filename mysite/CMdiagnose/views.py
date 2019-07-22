@@ -145,19 +145,21 @@ def newPerson(request):
 #     return HttpResponse("欢迎光临笔花医镜电子诊断系统")
 
 def newPersonExt(request):
-    b=Body()
-    b.general=''
-    b.general += request.POST['generext']
+    # b=Body()
+    # b.general=''
+    # b.general += request.POST['generext']
 
-    b.save()
-    t=Tongue(body=b)
+    # b.save()
+    # t=Tongue(body=b)
 
     
     t.save()
     
     try:
 
-        the_person = Person(body=b,tongue=t)
+        the_person=Person.objects.all()[:1].get()
+        the_person.body.general=''
+        the_person.body.general = request.POST['generext']
         # the_person.body.general = request.POST['general']
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):
@@ -177,6 +179,7 @@ def newPersonExt(request):
 
         genlist=[]
         genlist=[x.strip() for x in str(b.general).split(',')]
+        genlist = [i for i in genlist if i] 
         for genele in set(genlist):
             the_person.body.result=the_person.body.result.replace(genele,'<mg>'+genele+'</mg>')
             
@@ -227,17 +230,19 @@ def newYao(request):
 
 
 def newYaoExt(request):
-    b=Body()
-    b.general=''
-    b.general += request.POST['generext']
-    b.save()
-    t=Tongue(body=b)
+    # b=Body()
+    # b.general=''
+    # b.general += request.POST['generext']
+    # b.save()
+    # t=Tongue(body=b)
 
-    t.save()
+    # t.save()
     
     try:
 
-        the_person = Person(body=b,tongue=t)
+        the_person=Person.objects.all()[:1].get()
+        the_person.body.general=''
+        the_person.body.general = request.POST['generext']
         # the_person.body.general = request.POST['general']
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):
@@ -271,17 +276,19 @@ def newYaoExt(request):
 
 
 def newXue(request):
-    b=Body()
-    b.general=''
-    b.general += request.POST['generex']
-    b.save()
-    t=Tongue(body=b)
+    # b=Body()
+    # b.general=''
+    # b.general += request.POST['generex']
+    # b.save()
+    # t=Tongue(body=b)
 
-    t.save()
+    # t.save()
     
     try:
 
-        the_person = Person(body=b,tongue=t)
+        the_person=Person.objects.all()[:1].get()
+        the_person.body.general=''
+        the_person.body.general = request.POST['generex']
         # the_person.body.general = request.POST['general']
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):
