@@ -13,18 +13,18 @@
   <link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/multi-select/css/multi-select.css' %}">
   <style>
 
-      .RNNXgb {
-        background: #fff;
-        display: flex;
-        border-radius: 8px;
-        border: 1px solid #dfe1e5;
-        box-shadow: none;
-        border-radius: 24px;
-        z-index: 3;
-        height: 44px;
-        margin: 0 auto;
-        width: 582px;
-      }
+.RNNXgb {
+      background: #fff;
+      display: flex;
+      /* border-radius: 8px; */
+      border: 1px solid #dfe1e5;
+      box-shadow: none;
+      /* border-radius: 24px; */
+      z-index: 3;
+      height: 44px;
+      margin: 0 auto;
+      width: 500px;
+    }
     </style>
 
   <p>本資料庫的內容來源繁雜，不及備載，僅供學術參考，不作商業用途，其著作權各歸其原作者或其出版社所有。若有真實疾患請尋求合法醫師，非中醫師請勿擅自處方服藥。</p>
@@ -38,7 +38,7 @@
   {% csrf_token %}
   <div class="RNNXgb" align="center">
       <!-- <label>General Symptoms</label> -->
-      <input type="text" id="generext" name="generext" size="70" placeholder='請輸入症狀名稱，藥材名稱，或所包含的漢字（簡繁體皆可，系統自帶簡轉繁功能）'>
+      <input type="text" id="generext" name="generext" size="40" placeholder='請輸入症狀名稱，藥材名稱，或所包含的漢字（簡繁體皆可，系統自帶簡轉繁功能）'>
       &nbsp;
       <button class="btn btn-primary" type="submit" value="載入">載入</button><br>
     </div>
