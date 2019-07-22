@@ -76,22 +76,47 @@ def tell(request, person_id):
         return HttpResponseRedirect(reverse('CMdiagnose:results', args=(the_person.id,)))
 
 def newPerson(request):
-    # b=Body()
-    # b.general=''
-    # b.general += request.POST['generalt']
-
-    # b.save()
-    # t=Tongue(body=b)
+    b=Body()
+    b.general=''
+    b.general += request.POST['generalt']
+    # b.general += request.POST['headt']
+    # b.general += request.POST['wholet']
+    # # b.general += request.POST['tongue_t']
+    # b.general += request.POST['eyet']
+    # b.general += request.POST['entt']
+    # b.general += request.POST['neckt']
+    # b.general += request.POST['backt']
+    # b.general += request.POST['chestt']
+    # b.general += request.POST['stomacht']
+    # b.general += request.POST['lowerpartt']
+    # b.general += request.POST['limbst']
+    # b.general += request.POST['excrut']
+    # b.general += request.POST['sleept']
+    b.save()
+    t=Tongue(body=b)
 
     
-    # t.save()
+    #get tongue symptoms
+    # t.tip += request.POST['t_tipt']
+    # # t.root += request.POST['t_roott']
+    # t.side += request.POST['t_sidet']
+    # t.fur += request.POST['t_furt']
+    # t.color += request.POST['t_colort']
+    # t.moisture += request.POST['t_moisturet']
+    # t.middle += request.POST['t_middlet']
+    # t.bottom += request.POST['t_bottomt']
+    
+    # t_result=''
+    # t_result=t.check_()
+
+    #get body symptoms
+    
+    
+    t.save()
     
     try:
-        # the_person = get_object_or_404(Person, pk=588)
-        the_person=Person.objects.all()[:1].get()
-        the_person.body.general=''
-        the_person.body.general = request.POST['generalt']
-        # the_person = Person(body=b,tongue=t)
+
+        the_person = Person(body=b,tongue=t)
         # the_person.body.general = request.POST['general']
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):
@@ -128,7 +153,7 @@ def newPersonExt(request):
     # t=Tongue(body=b)
 
     
-    # t.save()
+    t.save()
     
     try:
 
@@ -153,13 +178,8 @@ def newPersonExt(request):
             case.case_checkext(the_person.body)
 
         genlist=[]
-<<<<<<< HEAD
-        genlist=[x.strip() for x in str(the_person.body.general).split(',')]
-        genlist = [i for i in genlist if i]
-=======
         genlist=[x.strip() for x in str(b.general).split(',')]
         genlist = [i for i in genlist if i] 
->>>>>>> 4cadcd0c83f3da6b1c1811ba2093c22aab254c74
         for genele in set(genlist):
             the_person.body.result=the_person.body.result.replace(genele,'<mg>'+genele+'</mg>')
             
@@ -173,19 +193,17 @@ def newPersonExt(request):
 
 
 def newYao(request):
-    # b=Body()
-    # b.general=''
-    # b.general += request.POST['generalt']
-    # b.save()
-    # t=Tongue(body=b)
+    b=Body()
+    b.general=''
+    b.general += request.POST['generalt']
+    b.save()
+    t=Tongue(body=b)
 
-    # t.save()
+    t.save()
     
     try:
 
-        the_person=Person.objects.all()[:1].get()
-        the_person.body.general=''
-        the_person.body.general = request.POST['generalt']
+        the_person = Person(body=b,tongue=t)
         # the_person.body.general = request.POST['general']
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):
@@ -225,10 +243,7 @@ def newYaoExt(request):
         the_person=Person.objects.all()[:1].get()
         the_person.body.general=''
         the_person.body.general = request.POST['generext']
-<<<<<<< HEAD
-=======
         # the_person.body.general = request.POST['general']
->>>>>>> 4cadcd0c83f3da6b1c1811ba2093c22aab254c74
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):
         # Redisplay the person telling form.
@@ -246,7 +261,7 @@ def newYaoExt(request):
             yao.yao_checkext(the_person.body)
 
         genlist=[]
-        genlist=[x.strip() for x in str(the_person.body.general).split(',')]
+        genlist=[x.strip() for x in str(b.general).split(',')]
         genlist = [i for i in genlist if i] 
         for genele in set(genlist):
             the_person.body.result=the_person.body.result.replace(genele,'<mg>'+genele+'</mg>')
@@ -270,17 +285,10 @@ def newXue(request):
     # t.save()
     
     try:
-<<<<<<< HEAD
-        the_person=Person.objects.all()[:1].get()
-        the_person.body.general=''
-        the_person.body.general += request.POST['generex']
-        # the_person = Person(body=b,tongue=t)
-=======
 
         the_person=Person.objects.all()[:1].get()
         the_person.body.general=''
         the_person.body.general = request.POST['generex']
->>>>>>> 4cadcd0c83f3da6b1c1811ba2093c22aab254c74
         # the_person.body.general = request.POST['general']
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):
@@ -299,7 +307,7 @@ def newXue(request):
             xue.xue_checkext(the_person.body)
 
         genlist=[]
-        genlist=[x.strip() for x in str(the_person.body.general).split(',')]
+        genlist=[x.strip() for x in str(b.general).split(',')]
         genlist = [i for i in genlist if i] 
         # print(genlist)
         for genele in set(genlist):
@@ -311,4 +319,3 @@ def newXue(request):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('CMdiagnose:resultsxue', args=(the_person.id,)))
-
