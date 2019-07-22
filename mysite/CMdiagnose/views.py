@@ -178,7 +178,7 @@ def newPersonExt(request):
             case.case_checkext(the_person.body)
 
         genlist=[]
-        genlist=[x.strip() for x in str(b.general).split(',')]
+        genlist=[x.strip() for x in str(the_person.body.general).split(',')]
         genlist = [i for i in genlist if i] 
         for genele in set(genlist):
             the_person.body.result=the_person.body.result.replace(genele,'<mg>'+genele+'</mg>')
@@ -261,7 +261,7 @@ def newYaoExt(request):
             yao.yao_checkext(the_person.body)
 
         genlist=[]
-        genlist=[x.strip() for x in str(b.general).split(',')]
+        genlist=[x.strip() for x in str(the_person.body.general).split(',')]
         genlist = [i for i in genlist if i] 
         for genele in set(genlist):
             the_person.body.result=the_person.body.result.replace(genele,'<mg>'+genele+'</mg>')
@@ -307,7 +307,7 @@ def newXue(request):
             xue.xue_checkext(the_person.body)
 
         genlist=[]
-        genlist=[x.strip() for x in str(b.general).split(',')]
+        genlist=[x.strip() for x in str(the_person.body.general).split(',')]
         genlist = [i for i in genlist if i] 
         # print(genlist)
         for genele in set(genlist):
