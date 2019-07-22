@@ -153,7 +153,7 @@ def newPersonExt(request):
     # t=Tongue(body=b)
 
     
-    t.save()
+    # t.save()
     
     try:
 
