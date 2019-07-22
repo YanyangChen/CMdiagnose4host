@@ -157,6 +157,8 @@ class Cases(models.Model):
                 body.result+="================================================================="+ "\n"
             body.result+=self.symptom.replace('【','\n\n【').replace('】','】\n') + "\n\n\n" 
             body.result+=self.solution.replace('【','\n【').replace('】','】\n') + "\n"+ "\n"+ "\n"
+            if (self.reference is not None):
+                body.result+=self.reference.replace('【','\n\n【').replace('】','】\n') + "\n\n\n" 
             # body.result+="================================================================="+ "\n"
 
 

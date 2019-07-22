@@ -23,7 +23,7 @@
 
 
 
-<form action="{% url 'CMdiagnose:newyext' %}" method="post">
+<form action="{% url 'CMdiagnose:newyext' %}" method="post" id="my_form">
   {% csrf_token %}
   <label>搜索中藥主治症狀</label>
   <input type="text" id="generext" name="generext" value=""><br>
@@ -1057,8 +1057,21 @@ $('.searchable[name=general]').multiSelect({
     
   }
   
-});
+},
+
+$('#my_form').submit(function(event) {
+  event.preventDefault(); //this will prevent the default submit
+
+  document.getElementById("generext").value=Traditionalized(document.getElementById("generext").value);
+  if (document.getElementById("generext").value.substr(-1)==','){
+    document.getElementById("generext").value=document.getElementById("generext").value.slice(0, -1);
+  }
+  // your code here
+  $(this).unbind('submit').submit(); // continue the submit unbind preventDefault
+})
+);
   </script>
+  </br></br></br>
 <input type="submit" value="載入">
 </form>
 

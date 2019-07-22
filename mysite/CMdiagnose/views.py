@@ -153,8 +153,13 @@ def newPersonExt(request):
             case.case_checkext(the_person.body)
 
         genlist=[]
+<<<<<<< HEAD
         genlist=[x.strip() for x in str(the_person.body.general).split(',')]
         genlist = [i for i in genlist if i]
+=======
+        genlist=[x.strip() for x in str(b.general).split(',')]
+        genlist = [i for i in genlist if i] 
+>>>>>>> 4cadcd0c83f3da6b1c1811ba2093c22aab254c74
         for genele in set(genlist):
             the_person.body.result=the_person.body.result.replace(genele,'<mg>'+genele+'</mg>')
             
@@ -220,6 +225,10 @@ def newYaoExt(request):
         the_person=Person.objects.all()[:1].get()
         the_person.body.general=''
         the_person.body.general = request.POST['generext']
+<<<<<<< HEAD
+=======
+        # the_person.body.general = request.POST['general']
+>>>>>>> 4cadcd0c83f3da6b1c1811ba2093c22aab254c74
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):
         # Redisplay the person telling form.
@@ -261,10 +270,17 @@ def newXue(request):
     # t.save()
     
     try:
+<<<<<<< HEAD
         the_person=Person.objects.all()[:1].get()
         the_person.body.general=''
         the_person.body.general += request.POST['generex']
         # the_person = Person(body=b,tongue=t)
+=======
+
+        the_person=Person.objects.all()[:1].get()
+        the_person.body.general=''
+        the_person.body.general = request.POST['generex']
+>>>>>>> 4cadcd0c83f3da6b1c1811ba2093c22aab254c74
         # the_person.body.general = request.POST['general']
         # the_person = person.get(pk=request.POST['choice'])
     except (KeyError, the_person.DoesNotExist):

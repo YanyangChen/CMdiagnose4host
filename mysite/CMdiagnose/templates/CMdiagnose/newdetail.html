@@ -22,10 +22,10 @@
   </div>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'CMdiagnose:newext' %}" method="post">
+<form action="{% url 'CMdiagnose:newext' %}" method="post" id="my_form">
 {% csrf_token %}
 <label>General Symptoms</label>
-<input type="text" id="generext" name="generext" value=""><br>
+<input type="text" id="generext" name="generext"><br>
 <select multiple='multiple' class='searchable' name="general">
   <option value=噯氣泛酸>噯氣泛酸</option>
   <option value=按胸則痛>按胸則痛</option>
@@ -1436,9 +1436,21 @@ $('.searchable[name=general]').multiSelect({
     
   }
   
-});
+},
+
+$('#my_form').submit(function(event) {
+  event.preventDefault(); //this will prevent the default submit
+
+  document.getElementById("generext").value=Traditionalized(document.getElementById("generext").value);
+  if (document.getElementById("generext").value.substr(-1)==','){
+    document.getElementById("generext").value=document.getElementById("generext").value.slice(0, -1);
+  }
+  // your code here
+  $(this).unbind('submit').submit(); // continue the submit unbind preventDefault
+})
+);
   </script>
-  
+</br></br></br>
 <input type="submit" value="載入">
 </form>
 <!-- <form action="{% url 'CMdiagnose:newext' %}" method="post">
