@@ -7,7 +7,7 @@
 <p>{{ person.body.general |linebreaks}}</p>
 
 <h1>相關穴位：</h1>
-<div style="user-select:none">
+<div>
 <p>{% autoescape off %}{{ person.body.result |linebreaks}}{% endautoescape %}</p>
 </div>
 </body>
