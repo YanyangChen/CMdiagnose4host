@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from CMdiagnose.models import Cases
+from CMdiagnose.models import Yao
 from CMdiagnose.models import Xue
 
 Cases.objects.filter(symptom__icontains="溫腎祛寒，縮尿止遺。")
@@ -200,3 +201,40 @@ c=Cases.objects.filter(facts__icontains="頁首")
 for ele in c:
     ele.facts=ele.facts.replace(ele.facts[ele.facts.find("table"):],'').replace('<br>','').replace('br/','').replace('br','').replace('<','').replace('>','')
     ele.save()
+
+CS=Cases.objects.filter(solution__icontains="<a href")
+for C in CS:
+    s=C.solution 
+    while ("<a href" in s):
+        s=s.replace(s[s.find("<a href"):s.find(">",s.find("<a href"))+1],"").replace("</a>","")
+    C.solution=s
+    C.save()
+    print(str(C.pk) + " finished")   
+    
+CS=Cases.objects.filter(symptom__icontains="<a href")
+for C in CS:
+    s=C.symptom 
+    while ("<a href" in s):
+        s=s.replace(s[s.find("<a href"):s.find(">",s.find("<a href"))+1],"").replace("</a>","")
+    C.symptom=s
+    C.save()
+    print(str(C.pk) + " finished")   
+
+CS=Cases.objects.filter(facts__icontains="<a href")
+for C in CS:
+    s=C.facts 
+    while ("<a href" in s):
+        s=s.replace(s[s.find("<a href"):s.find(">",s.find("<a href"))+1],"").replace("</a>","")
+    C.facts=s
+    C.save()
+    print(str(C.pk) + " finished")   
+
+
+CS=Yao.objects.filter(properties__icontains="<a href")
+for C in CS:
+    s=C.properties
+    while ("<a href" in s):
+        s=s.replace(s[s.find("<a href"):s.find(">",s.find("<a href"))+1],"").replace("</a>","")
+    C.properties=s
+    C.save()
+    print(str(C.pk) + " finished")  

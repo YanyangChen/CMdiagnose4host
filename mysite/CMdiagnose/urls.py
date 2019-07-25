@@ -19,4 +19,7 @@ urlpatterns = [
     path('<int:pk>/resultsy/', views.ResultsYao.as_view(), name='resultsy'),
     path('<int:pk>/resultsxue/', views.ResultsXue.as_view(), name='resultsxue'),
     path('<int:person_id>/tell/', views.tell, name='tell'),
+    path('listxue', views.ListXue.as_view()),
+    path('listxue/<int:pk>/', views.DetailXue.as_view()),
+    
 ]

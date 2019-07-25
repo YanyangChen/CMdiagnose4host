@@ -1,3 +1,5 @@
+    http://yibian.hopto.org/pic/shu16/15.gif
+
 import urllib.request
 from bs4 import BeautifulSoup
 for i in range(451, 501):
@@ -7,6 +9,7 @@ for i in range(451, 501):
 
     images=soup.findAll('img')
     img2download=""
+
     for img in images:
         if ("pic" in str(img)):
             img2download += "http://yibian.hopto.org/" + str(img.attrs.get("src")) + ","
@@ -23,3 +26,8 @@ for x in Xue.objects.all():
     for i in range(1, 14):
         x.properties=x.properties.replace("/pic/acu/norm/"+ str(i) + "/","/static/pic/")
     x.save()
+
+
+for i in range(1, 50):
+    urllib.request.urlretrieve("http://yibian.hopto.org/pic/shu16/" + str(i) + ".gif", os.path.basename(str(img.attrs.get("src"))))
+    print(str(i) + " finished")

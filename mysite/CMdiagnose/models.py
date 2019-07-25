@@ -301,6 +301,13 @@ class Xue(models.Model):
     name = models.CharField(max_length=200,default="nothing",null=True, blank=True)
     responses = models.CharField(max_length=2000,default="nothing",null=True, blank=True)
     properties = models.CharField(max_length=2000,default="nothing",null=True, blank=True)
+
+
+    def __str__(self):
+        """A string representation of the model."""
+        return self.name
+
+
     def xue_check(self,body):
 
         factlist=[]
