@@ -130,5 +130,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/aaronchen/mysite/CMdiagnose/static'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'templates'),
+    os.path.join(BASE_DIR,'static'),
 )
