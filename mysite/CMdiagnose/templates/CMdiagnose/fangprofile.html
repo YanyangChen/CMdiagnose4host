@@ -1,0 +1,18 @@
+<html><body>
+    <h1>方劑一覽</h1>
+    
+        {% for fang in fangs %}
+        <div>
+        <ul>
+        ==============================================================================
+        {% autoescape off %}
+        <li>{{ fang.solution }}</li>
+        
+        <li>{{ fang.symptom }}</li>
+        {% endautoescape %}
+        </ul>
+        </div>
+        {% endfor %}
+
+  
+    </body></html>

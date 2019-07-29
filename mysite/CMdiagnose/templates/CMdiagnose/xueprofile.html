@@ -1,0 +1,17 @@
+<html><body>
+    <h1>穴位一覽</h1>
+    
+        {% for xue in xues %}
+        {% autoescape off %}
+    <div>
+        <ul>
+        <li>{{ xue.name }}</li>
+        
+        <li>{{ xue.properties }}</li>
+        <li>{{ xue.responses }}</li>
+        </ul>
+        {% endautoescape %}
+    </div>
+        {% endfor %}
+    
+    </body></html>
