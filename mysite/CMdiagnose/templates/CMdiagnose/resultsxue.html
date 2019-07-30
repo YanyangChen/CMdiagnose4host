@@ -1,6 +1,10 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/style3.css' %}">
 
+<link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/style3.css' %}">
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:bootindex' %}">回首頁</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailxue' %}">穴位搜索</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailyao' %}">中藥搜索</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetail' %}">方劑搜索</a>
 <body>
 <h1>穴位主治：</h1>
 
