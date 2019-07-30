@@ -5,6 +5,7 @@
 <a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailxue' %}">穴位搜索</a>
 <a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailyao' %}">中藥搜索</a>
 <a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetail' %}">方劑搜索</a>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1497,5 +1498,14 @@ $('#my_form').submit(function(event) {
   <input type="text" id="generext" name="generext" value=""><br>
   <input type="submit" value="載入">
 </form> -->
-
+<div align="left">
+    API ：</br>
+    穴位：aaronchen.pythonanywhere.com/CMdiagnose/zlistx/?q=XX</br>
+    中藥：aaronchen.pythonanywhere.com/CMdiagnose/zlisty/?q=XX</br>
+    方劑：aaronchen.pythonanywhere.com/CMdiagnose/zlistf/?q=XX</br>
+    (只需將以上網址複製粘貼至地址欄：將"XX"改寫成對應症狀名稱即可直接得到搜索結果</br>
+    例如：搜索關於“頭痛”的穴位：</br>
+    僅需複製以下網址粘貼到瀏覽器的地址欄（中藥，方劑以此類推）</br>
+    aaronchen.pythonanywhere.com/CMdiagnose/zlistx/?q=頭痛)</br>
+</div>
 </body>
