@@ -1,4 +1,5 @@
 from rest_framework import generics
+from opencc import OpenCC
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404, render
 from django.http import Http404
@@ -476,8 +477,13 @@ class XueList(APIView):
     def get(self, request):
         name=request.GET.get('q', '')
         print(name)
+        cc = OpenCC('s2t')
+        name = cc.convert(name)
         if name is not None:
             queryset = Xue.objects.filter(name__icontains=name)
+            for ele in queryset:
+                ele.properties=ele.properties.replace('【','\n\n【').replace('】','】\n') + "\n\n\n"
+                ele.responses=ele.responses.replace(name,'<mg>'+name+'</mg>').replace('center','p').replace('【','\n\n【').replace('】','】\n') + "\n\n\n" 
             return Response({'xues': queryset})
 
 
@@ -489,8 +495,12 @@ class YaoList(APIView):
     def get(self, request):
         name=request.GET.get('q', '')
         print(name)
+        cc = OpenCC('s2t')
+        name = cc.convert(name)
         if name is not None:
             queryset = Yao.objects.filter(name__icontains=name)
+            for ele in queryset:
+                ele.responses=ele.responses.replace(name,'<mg>'+name+'</mg>')
             return Response({'yaos': queryset})
 
 class FangList(APIView):
@@ -501,20 +511,33 @@ class FangList(APIView):
     def get(self, request):
         name=request.GET.get('q', '')
         print(name)
+        cc = OpenCC('s2t')
+        name = cc.convert(name)
         if name is not None:
             queryset = Cases.objects.filter(solution__icontains=name)
+            for ele in queryset:
+                ele.solution=ele.solution.replace(name,'<mg>'+name+'</mg>')
             return Response({'fangs': queryset})
 
 class zXueList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'CMdiagnose/xueprofile.html'
-
+    
 
     def get(self, request):
         name=request.GET.get('q', '')
         print(name)
+        cc = OpenCC('s2t')
+        name = cc.convert(name)
         if name is not None:
             queryset = Xue.objects.filter(responses__icontains=name)
+            for ele in queryset:
+                ele.properties=ele.properties.replace('【','\n\n【').replace('】','】\n') + "\n\n\n"
+                ele.properties=ele.properties.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','')
+                ele.responses=ele.responses.replace(name,'<mg>'+name+'</mg>')
+                ele.responses=ele.responses.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','')
+                ele.responses=ele.responses.replace('【','\n\n【').replace('】','】\n') + "\n\n\n" 
+            
             return Response({'xues': queryset})
 
 
@@ -526,8 +549,16 @@ class zYaoList(APIView):
     def get(self, request):
         name=request.GET.get('q', '')
         print(name)
+        cc = OpenCC('s2t')
+        name = cc.convert(name)
         if name is not None:
             queryset = Yao.objects.filter(responses__icontains=name)
+            for ele in queryset:
+                ele.properties=ele.properties.replace('【','\n\n【').replace('】','】\n') + "\n\n\n"
+                ele.properties=ele.properties.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','')
+                ele.responses=ele.responses.replace(name,'<mg>'+name+'</mg>')
+                ele.responses=ele.responses.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','')
+                ele.responses=ele.responses.replace('【','\n\n【').replace('】','】\n') + "\n\n\n" 
             return Response({'yaos': queryset})
 
 class zFangList(APIView):
@@ -538,8 +569,12 @@ class zFangList(APIView):
     def get(self, request):
         name=request.GET.get('q', '')
         print(name)
+        cc = OpenCC('s2t')
+        name = cc.convert(name)
         if name is not None:
             queryset = Cases.objects.filter(symptom__icontains=name)
+            for ele in queryset:
+                ele.symptom=ele.symptom.replace(name,'<mg>'+name+'</mg>')
             return Response({'fangs': queryset})
 
 class ListXue(generics.ListCreateAPIView):

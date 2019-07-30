@@ -1,15 +1,23 @@
 <html><body>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/style3.css' %}">
+        <a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:bootindex' %}">回首頁</a>
+        <a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailxue' %}">穴位搜索</a>
+        <a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailyao' %}">中藥搜索</a>
+        <a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetail' %}">方劑搜索</a>
     <h1>藥材一覽</h1>
     
         {% for yao in yaos %}
     <div>
-        ==============================================================================
+        
         {% autoescape off %}
-    <ul>
-        <li>{{ yao.name }}</li>
-        <li>{{ yao.properties }}</li>
+   
+        =========={{ yao.name }}==========
         <li>{{ yao.responses }}</li>
-    </ul>
+        <li>{{ yao.properties }}</li>
+   
+        
+    
         {% endautoescape %}
     </div>
         {% endfor %}
