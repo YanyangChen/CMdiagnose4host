@@ -13,6 +13,7 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer, StaticHTMLRenderer, TemplateHTMLRenderer
 from .models import Body, Tongue, Person, Cases, Yao, Xue
 from .serializers import XueSerializer, YaoSerializer, CasesSerializer
+from itertools import chain
 
 
 
@@ -530,14 +531,16 @@ class zXueList(APIView):
         cc = OpenCC('s2t')
         name = cc.convert(name)
         if name is not None:
-            queryset = Xue.objects.filter(responses__icontains=name)
+            queryset1 = Xue.objects.filter(responses__icontains=name)
+            queryset2 = Xue.objects.filter(properties__icontains=name)
+            queryset=list(set(list(chain(queryset1,queryset2))))
             for ele in queryset:
                 ele.properties=ele.properties.replace('【','\n\n【').replace('】','】\n') + "\n\n\n"
                 ele.properties=ele.properties.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','')
-                ele.responses=ele.responses.replace(name,'<mg>'+name+'</mg>')
                 ele.responses=ele.responses.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','')
                 ele.responses=ele.responses.replace('【','\n\n【').replace('】','】\n') + "\n\n\n" 
-            
+                ele.responses=ele.responses.replace(name,'<mg>'+name+'</mg>')
+                ele.properties=ele.properties.replace(name,'<mg>'+name+'</mg>')
             return Response({'xues': queryset})
 
 
@@ -552,13 +555,17 @@ class zYaoList(APIView):
         cc = OpenCC('s2t')
         name = cc.convert(name)
         if name is not None:
-            queryset = Yao.objects.filter(responses__icontains=name)
+            queryset1 = Yao.objects.filter(responses__icontains=name)
+            queryset2 = Yao.objects.filter(properties__icontains=name)
+            # merged=queryset1 + queryset2
+            queryset=list(set(list(chain(queryset1,queryset2))))
             for ele in queryset:
                 ele.properties=ele.properties.replace('【','\n\n【').replace('】','】\n') + "\n\n\n"
-                ele.properties=ele.properties.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','')
-                ele.responses=ele.responses.replace(name,'<mg>'+name+'</mg>')
-                ele.responses=ele.responses.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','')
+                ele.properties=ele.properties.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','').replace('<p','')
+                ele.responses=ele.responses.replace('<li>','').replace('</li>','').replace('<ul>','').replace('</ul>','').replace('<p','')
                 ele.responses=ele.responses.replace('【','\n\n【').replace('】','】\n') + "\n\n\n" 
+                ele.responses=ele.responses.replace(name,'<mg>'+name+'</mg>')
+                ele.properties=ele.properties.replace(name,'<mg>'+name+'</mg>')
             return Response({'yaos': queryset})
 
 class zFangList(APIView):
