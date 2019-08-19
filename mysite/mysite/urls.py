@@ -24,5 +24,6 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('google3f8df73d8e92caf2.html', TemplateView.as_view(template_name='google3f8df73d8e92caf2.html'), name='google3f8df73d8e92caf2'),
+    path('', TemplateView.as_view(template_name='newdetailxue.html'), name='newdetailxue'),
     # path('api/', include('xue.urls')),
 ]
