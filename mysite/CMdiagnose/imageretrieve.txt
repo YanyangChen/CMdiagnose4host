@@ -31,3 +31,45 @@ for x in Xue.objects.all():
 for i in range(1, 50):
     urllib.request.urlretrieve("http://yibian.hopto.org/pic/shu16/" + str(i) + ".gif", os.path.basename(str(img.attrs.get("src"))))
     print(str(i) + " finished")
+
+
+page = requests.get("http://www.zysj.com.cn/lilunshuji/chengxingxuanyian/index.html", proxies={'http': 'proxy1.edb.gov.hk:8080'},timeout=5)
+soup = BeautifulSoup(page.content, 'html.parser')
+href=soup.findAll('a')
+alinks=soup.select("a[href*=/lilunshuji/]")
+for a in range(1,alinks.__len__()):
+    alinks[a]= str(alinks[a]).replace("<a href=\"","").replace(str(alinks[a])[(int(str(alinks[a]).find("\" title"))):],"")
+
+page2 = requests.get("http://www.zysj.com.cn" + alinks[7], proxies={'http': 'proxy1.edb.gov.hk:8080'},timeout=5)
+soup2 = BeautifulSoup(page2.content, 'html.parser')
+head = soup2.findAll('h1')
+parts = soup2.findAll('p')
+print(head)
+========================medical cases
+
+page = requests.get("http://www.zysj.com.cn/lilunshuji/sunwenyuanyian/index.html", proxies={'http': 'proxy1.edb.gov.hk:8080'},timeout=5)
+soup = BeautifulSoup(page.content, 'html.parser')
+href=soup.findAll('a')
+alinks=soup.select("a[href*=/lilunshuji/sunwenyuanyian]")
+for a in range(1,alinks.__len__()):
+    alinks[a]= str(alinks[a]).replace("<a href=\"","").replace(str(alinks[a])[(int(str(alinks[a]).find("\" title"))):],"")
+
+print("size is : " + str(alinks.__len__()) )
+
+for b in range(1,alinks.__len__()):
+    page2 = requests.get("http://www.zysj.com.cn" + alinks[b], proxies={'http': 'proxy1.edb.gov.hk:8080'},timeout=5)
+    soup2 = BeautifulSoup(page2.content, 'html.parser')
+    head = soup2.findAll('h1')
+    parts = soup2.findAll('p')
+    y=Hcases(facts=parts, title=head, reference="《孙文垣医案》")
+    y.save()
+    print(str(b) + "finished")
+
+    http://www.zysj.com.cn/lilunshuji/chengxingxuanyian/index.html
+
+page = requests.get("http://www.zysj.com.cn/lilunshuji/chengxingxuanyian/index.html", proxies={'http': 'proxy1.edb.gov.hk:8080'},timeout=5)
+soup = BeautifulSoup(page.content, 'html.parser')
+href=soup.findAll('a')
+alinks=soup.select("a[href*=/lilunshuji/fanzhonglin]")
+for a in range(1,alinks.__len__()):
+    alinks[a]= str(alinks[a]).replace("<a href=\"","").replace(str(alinks[a])[(int(str(alinks[a]).find("\" title"))):],"")

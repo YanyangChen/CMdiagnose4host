@@ -11,7 +11,7 @@ from django.views import generic
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer, StaticHTMLRenderer, TemplateHTMLRenderer
-from .models import Body, Tongue, Person, Cases, Yao, Xue
+from .models import Body, Tongue, Person, Cases, Yao, Xue, Hcases
 from .serializers import XueSerializer, YaoSerializer, CasesSerializer
 from itertools import chain
 
@@ -23,6 +23,10 @@ class NewDetailView(generic.TemplateView):
     # model = Person
     template_name = 'CMdiagnose/newdetail.html'
 
+class NewDetailViewh(generic.TemplateView):
+    # https://docs.djangoproject.com/en/2.2/ref/class-based-views/generic-editing/#django.views.generic.edit.CreateView
+    # model = Person
+    template_name = 'CMdiagnose/newdetailh.html'
 
 class NewDetailYao(generic.TemplateView):
     
@@ -40,6 +44,10 @@ class DetailView(generic.DetailView):
 class ResultsView(generic.DetailView):
     model = Person
     template_name = 'CMdiagnose/results.html'
+
+class ResultsHcases(generic.DetailView):
+    model = Person
+    template_name = 'CMdiagnose/resultsHcases.html'
 
 class ResultsYao(generic.DetailView):
     model = Person
@@ -199,6 +207,51 @@ def newCasesExt(request):
         the_person.save()
 
         return HttpResponseRedirect(reverse('CMdiagnose:results', args=(the_person.id,)))
+
+def newHcasesExth(request):
+    # b=Body()
+    # b.general=''
+    # b.general += request.POST['generext']
+
+    # b.save()
+    # t=Tongue(body=b)
+
+    
+    # t.save()
+    
+    try:
+
+        the_person=Person.objects.all()[:1].get()
+        the_person.body.general=''
+        the_person.body.general = request.POST['generext']
+        # the_person.body.general = request.POST['general']
+        # the_person = person.get(pk=request.POST['choice'])
+    except (KeyError, the_person.DoesNotExist):
+        # Redisplay the person telling form.
+        return render(request, 'CMdiagnose/detail.html', {
+            'person': person,
+            'error_message': "You didn't submit any symptoms.",
+        })
+    else:
+        print (the_person.body.general)
+        
+        caselist=Hcases.objects.all()
+        the_person.body.result=''
+        # the_person.body.result=t_result
+        for case in caselist:
+            case.case_checkext(the_person.body)
+
+        genlist=[]
+        genlist=[x.strip() for x in str(the_person.body.general).split(',')]
+        genlist = [i for i in genlist if i] 
+        for genele in set(genlist):
+            the_person.body.result=the_person.body.result.replace(genele,'<mg>'+genele+'</mg>')
+            
+        the_person.body.save()
+        the_person.tongue.save()
+        the_person.save()
+
+        return HttpResponseRedirect(reverse('CMdiagnose:resultsh', args=(the_person.id,)))
 
 def newCasesExt2(request):
     # b=Body()

@@ -186,6 +186,34 @@ class Cases(models.Model):
                 body.result+=self.solution + "\n"+ "\n"+ "\n"
                 body.result+="========================来源：汤头歌诀=============================="+ "\n"+ "\n"
 
+class Hcases(models.Model):
+    facts = models.CharField(max_length=2000,default="nothing",null=True, blank=True)
+    symptom = models.CharField(max_length=2000,default="nothing",null=True, blank=True)
+    title = models.CharField(max_length=2000,default="nothing",null=True, blank=True)
+    marks = models.CharField(max_length=200,default="0",null=True, blank=True)
+    reference = models.CharField(max_length=2000,default="nothing",null=True, blank=True)
+    def case_checkext(self,body):
+
+        factlist=[]
+        factlist=[x.strip() for x in str(self.facts)]
+        counter = 0
+        for element in factlist:
+            if element != '' and element in body.general:
+                counter += 1
+                # print('match found in')
+                # print(counter)
+
+        self.marks = counter/len(factlist)
+        # if '' in factlist:
+        #     self.marks = counter/(len(factlist)-1)
+        if self.marks > 0.001:
+            # body.result+=self.name + "匹配度 " +str(float(self.marks)*100) + " % \n"
+            body.result+="=========================="+self.reference
+            body.result+=self.title +"=========================="+ "\n"+ "\n"+ "\n"
+            body.result+=self.facts
+            body.result=body.result.replace(']','').replace('[','')
+            # body.result+=self.properties.replace('center','p').replace('【','\n【').replace('】','】\n') + "\n"+ "\n"+ "\n"
+
 class Person(models.Model):
     body = models.OneToOneField(Body, on_delete=models.CASCADE)
     tongue = models.OneToOneField(Tongue, on_delete=models.CASCADE)

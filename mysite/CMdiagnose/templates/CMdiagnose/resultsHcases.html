@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/style3.css' %}">
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:bootindex' %}">回首頁</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailxue' %}">穴位搜索</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailyao' %}">中藥搜索</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetail' %}">方劑搜索</a>
+<body>
+<h1>症狀：</h1>
+
+<p>{{ person.body.general |linebreaks}}</p>
+
+<h1>診斷結果：</h1>
+<div>
+<p>{% autoescape off %}{{ person.body.result |linebreaks}}{% endautoescape %}</p>
+</div>
+<script type="text/javascript"> var infolinks_pid = 3197649; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+</body>

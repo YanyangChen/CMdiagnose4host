@@ -1,0 +1,156 @@
+
+    {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/style3.css' %}">
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:bootindex' %}">回首頁</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailxue' %}">穴位搜索</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetailyao' %}">中藥搜索</a>
+<a class="btn btn-primary js-scroll-trigger" href="{% url 'CMdiagnose:newdetail' %}">方劑搜索</a>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>中醫資源檢索系統</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'CMdiagnose/multi-select/css/multi-select.css' %}">
+  <link href="/static/CMdiagnose/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <style>
+
+    .RNNXgb {
+      background: #fff;
+      display: flex;
+      /* border-radius: 8px; */
+      border: 1px solid #dfe1e5;
+      box-shadow: none;
+      /* border-radius: 24px; */
+      z-index: 3;
+      height: 44px;
+      margin: 0 auto;
+      width: 500px;
+    }
+  </style>
+  
+
+<body>
+
+     
+  <p>本資料庫的內容來源繁雜，不及備載，僅供學術參考，不作商業用途，其著作權各歸其原作者或其出版社所有。若有真實疾患請尋求合法醫師，非中醫師請勿擅自處方服藥。</p>
+  <br>
+ 
+ 
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'CMdiagnose:newexth' %}" method="post" id="my_form">
+{% csrf_token %}
+
+<div class="RNNXgb" align="center">
+<!-- <label>General Symptoms</label> -->
+<input type="text" id="generext" name="generext" size="70" placeholder='請輸入症狀名稱，方劑名稱，或所包含的漢字（簡繁體皆可，系統自帶簡轉繁功能）'>
+&nbsp;
+<button class="btn btn-primary" type="submit" value="載入">載入</button><br>
+</div>
+</br></br>
+
+<div align="center" clsee="container3">
+
+
+    <div align="center">
+        <p>以下為症狀輔助查找系統，若您不熟悉症狀名稱，可任意打入一個漢字，與該字相關的症狀名稱將會在選項框中出現。</p>
+        <p>當症狀名稱被選定後，關閉彈出的確認窗口，您選定的症狀名稱將出現在搜索欄。選項默認為繁體，可按鈕轉換為簡體。</p>
+        簡繁轉化
+        <a  id="translateLink" class="btn btn-success" href="javascript:translatePage();">简体</a>
+    </div>
+
+
+  <!-- ends -->
+  <!-- jQuery -->
+  <script src="/static/CMdiagnose/js/jquery.min.js"></script>
+  <script src="/static/CMdiagnose/js/jquery.quicksearch.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="/static/CMdiagnose/js/bootstrap.min.js"></script>
+  <script src="/static/CMdiagnose/js/jquery.multi-select.js"></script>
+  <script src="/static/CMdiagnose/js/FontChange.js"></script>
+  <script type="text/javascript">
+  // run pre selected options
+
+
+
+$('.searchable[name=general]').multiSelect({
+  selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='嘗試輸入 \"炎\"'>",
+  selectionHeader: "<input type='text' class='search-input' autocomplete='off'>",
+  afterInit: function(ms){
+    var that = this,
+        $selectableSearch = that.$selectableUl.prev(),
+        $selectionSearch = that.$selectionUl.prev(),
+        selectableSearchString = '#'+that.$container.attr('id')+' .ms-elem-selectable:not(.ms-selected)',
+        selectionSearchString = '#'+that.$container.attr('id')+' .ms-elem-selection.ms-selected';
+
+    that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+    .on('keydown', function(e){
+      if (e.which === 40){
+        that.$selectableUl.focus();
+        return false;
+      }
+    });
+
+    that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+    .on('keydown', function(e){
+      if (e.which == 40){
+        that.$selectionUl.focus();
+        return false;
+      }
+    });
+  },
+  afterSelect: function(values){
+    this.qs1.cache();
+    this.qs2.cache();
+    alert("Select value: "+values);
+    document.getElementById("generext").value += values + "," ;
+  },
+
+  afterDeselect: function(){
+    this.qs1.cache();
+    this.qs2.cache();
+    
+    
+  }
+  
+},
+
+$('#my_form').submit(function(event) {
+  event.preventDefault(); //this will prevent the default submit
+
+  // document.getElementById("generext").value=Traditionalized(document.getElementById("generext").value);
+  if (document.getElementById("generext").value.substr(-1)==','){
+    document.getElementById("generext").value=document.getElementById("generext").value.slice(0, -1);
+  }
+  // your code here
+  $(this).unbind('submit').submit(); // continue the submit unbind preventDefault
+})
+);
+  </script>
+</br></br></br>
+</div>
+
+</form>
+<script type="text/javascript"> var infolinks_pid = 3197649; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+
+<!-- <form action="{% url 'CMdiagnose:newext' %}" method="post">
+  {% csrf_token %}
+
+  <label>Extreme Search by Symptoms</label>
+  <input type="text" id="generext" name="generext" value=""><br>
+  <input type="submit" value="載入">
+</form> -->
+<div align="left">
+    API ：</br>
+    穴位：aaronchen.pythonanywhere.com/CMdiagnose/zlistx/?q=XX</br>
+    中藥：aaronchen.pythonanywhere.com/CMdiagnose/zlisty/?q=XX</br>
+    方劑：aaronchen.pythonanywhere.com/CMdiagnose/zlistf/?q=XX</br>
+    (只需將以上網址複製粘貼至地址欄：將"XX"改寫成對應症狀名稱即可直接得到搜索結果</br>
+    例如：搜索關於“頭痛”的穴位：</br>
+    僅需複製以下網址粘貼到瀏覽器的地址欄（中藥，方劑以此類推）</br>
+    aaronchen.pythonanywhere.com/CMdiagnose/zlistx/?q=頭痛)</br>
+</div>
+</body>
